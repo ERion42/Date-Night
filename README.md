@@ -1,1 +1,3 @@
-I enjoy JavaScript because it utilizes both Functional programming and object-oriented programming.
+NoO! Why am I so unoriginal?
+
+-Eric
