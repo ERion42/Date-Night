@@ -1,2 +1,1 @@
-# groupProject
-Repo for a Group Project to be defined later
+I enjoy JavaScript because it utilizes both Functional programming and object-oriented programming.
