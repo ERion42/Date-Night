@@ -1,3 +1,8 @@
+
+NoO! Why am I so unoriginal?
+
+-Eric
+=======
 # groupProject
 Repo for a Group Project to be defined later
 
@@ -21,3 +26,6 @@ JavaScript is conceptually pleasing with the for loops and if statements.  Logic
 Javascript is pretty heckin neat
 
 main
+=======
+
+
