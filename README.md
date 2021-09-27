@@ -7,6 +7,9 @@ NoO! Why am I so unoriginal?
 Repo for a Group Project to be defined later
 
 
+another-feature
+Here's another feature
+=======
 
 ## Courtney
 
@@ -21,5 +24,8 @@ JavaScript is conceptually pleasing with the for loops and if statements.  Logic
 
 
 Javascript is pretty heckin neat
+
+main
+=======
 
 
