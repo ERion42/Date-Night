@@ -1,0 +1,25 @@
+:root {
+    --light: #EDC7B7;
+    --lighter: #EEE2DC;
+    --dark: #123C69;
+    --accent: #AC3B61;
+    --greyish: #BAB2B5;
+}
+
+main {
+    color: var(--dark);
+}
+
+.myJumbotron {
+    background-color: var(--light) !important;
+    color: var(--dark);
+}
+
+.navBar {
+    color: var(--dark) !important;
+}
+
+
+.btnBegin {
+    background: var(--dark) !important;
+}
