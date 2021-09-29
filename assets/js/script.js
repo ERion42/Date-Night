@@ -13,8 +13,17 @@
 
 
 
+
+
+
+
+
+
+
+
+var tags = "vegetarian"
 function foodRequest (){
-fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random", {
+fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
@@ -25,15 +34,8 @@ fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/rando
 .then(data => console.log(data));
 }
 
-
-
-
-
-
-
-
 function movieRequest (){
-fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=prime&type=movie", {
+fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service="+service+"&type=movie&genre="+ genreCode, {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "streaming-availability.p.rapidapi.com",
@@ -42,6 +44,5 @@ fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
 })
 .then(response => response.json())
 .then(data => console.log(data))
-
 // 4: musical, 12: Adventure, 14: fantasy, 18: Drama, 27: Horror, 28: Action, 35: Comedy, 80: Crime, 878: Science fiction, 10749: Romance.
 }
