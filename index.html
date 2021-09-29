@@ -4,82 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    
+    <link rel="stylesheet" href="./assets/css/style.css">    
     <title>Date Nite</title>
 </head>
-<body>
-
-
-    
-    <body cz-shortcut-listen="true">
-        <header>
-            <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
-              <div class="container-fluid">
-                <button
-                  class="navbar-toggler"
-                  type="button"
-                  data-mdb-toggle="collapse"
-                  data-mdb-target="#navbarExample01"
-                  aria-controls="navbarExample01"
-                  aria-expanded="false"
-                  aria-label="Toggle navigation"
-                >
-                  <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarExample01">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item active">
-                      <a class="nav-link" aria-current="page" href="#">Home</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-            <!-- Navbar -->
-          
-            <!-- Jumbotron -->
-            <div class="p-5 text-center bg-light">
-              <h1 class="mb-3">Date Night Picker</h1>
-              <h4 class="mb-3">Put Your Date In Our Hands</h4>
+<body cz-shortcut-listen="true">
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-mdb-toggle="collapse"
+                data-mdb-target="#navbarExample01"
+                aria-controls="navbarExample01"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                </li>
+                </ul>
             </div>
-            <!-- Jumbotron -->
-          </header>
+            </div>
+        </nav>
+        <!-- Navbar -->
+    </header>
 
-        <main>      
+    <main>
+        <!-- Jumbotron : This banner might stay throughout the application's pages, or it could be replaced by a banner image -->
+        <div class="p-5 text-center bg-light myJumbotron">
+            <h1 class="mb-3">Date Night Picker</h1>
+            <h4 class="mb-3">Put Your Date In Our Hands</h4>
+        </div>
+        <!-- Jumbotron -->
 
-          <div class="b-example-divider"></div>
-        
-          <section class="container col-xxl-8 px-4 py-5">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-              <div class="col-10 col-sm-8 col-lg-6">
-                <img src="./assets/img/brown_wooden_table_and_chairs-scopio-428d7102-f7f6-4ee5-8f3a-cbab03480eb2.jpg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width=100% height=auto loading="lazy">
-              </div>
-              <div class="col-lg-6">
-                <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
-                <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Begin</button>
+        <!-- Body segment -->
+        <section class="container col-xxl-8 px-4 py-5">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5 landingSection">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="./assets/img/brown_wooden_table_and_chairs-scopio-428d7102-f7f6-4ee5-8f3a-cbab03480eb2.jpg" class="d-block mx-lg-auto img-fluid mainPic" alt="Bootstrap Themes" width=100% height=auto loading="lazy">
                 </div>
-              </div>
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
+                    <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 btnBegin">Begin</button>
+                    </div>
+                </div>
             </div>
         </section>
+
+    
+
+    </main>
         
+    <!-- Need a footer Section -->    
         
-          <div class="b-example-divider mb-0"></div>
-        </main>
-        
-        
-            <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-        
-              
-          
-        
-        </body>
 
 
     
@@ -93,7 +81,7 @@
     ></script>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+    <script src="./questions.js"></script>
     <script src="./assets/js/script.js"></script>
     <!-- Temporarily commented out 
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>
