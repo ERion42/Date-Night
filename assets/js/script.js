@@ -12,6 +12,7 @@
 
 
 
+console.log(foodQuestions)
 
 
 
@@ -20,8 +21,7 @@
 
 
 
-
-var tags = "vegetarian"
+var tags = "meat,appetizer"
 function foodRequest (){
 fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
 	"method": "GET",

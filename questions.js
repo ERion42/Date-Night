@@ -34,13 +34,7 @@ var foodQuestions = [
         choices: ["Appetizer","Breakfast","Lunch","Dinner","Dessert","No-Preference"]
     },
     {
-        title: ""
-
-
-    },
-    {
-
-
-
+        title: "Any dietary preferences",
+        choices: ["Meat","Vegetarian","gluten-free"]
     }
 ]
