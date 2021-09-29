@@ -1,3 +1,4 @@
+/* Set Color Scheme here*/
 :root {
     --light: #EDC7B7;
     --lighter: #EEE2DC;
@@ -15,11 +16,21 @@ main {
     color: var(--dark);
 }
 
-.navBar {
-    color: var(--dark) !important;
+.bg-dark {
+    color: white !important;
+    background: var(--dark) !important;
 }
 
 
 .btnBegin {
     background: var(--dark) !important;
+}
+
+.questionsContainer {
+    display: grid;
+    /* creating two equal columns, fr= fraction */
+    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+
 }
