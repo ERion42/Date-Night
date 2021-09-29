@@ -1,3 +1,18 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function foodRequest (){
 fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random", {
 	"method": "GET",
@@ -9,6 +24,13 @@ fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/rando
 .then(response => response.json())
 .then(data => console.log(data));
 }
+
+
+
+
+
+
+
 
 function movieRequest (){
 fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service=prime&type=movie", {
