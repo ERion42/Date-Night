@@ -113,11 +113,6 @@ var searchNearby = function(){
 
 
 
-console.log(foodQuestions)
-
-
-
-
 
 
 

@@ -3,15 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <script 
-        src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-    </script>
-    <!-- Moment.js -->
-    <script
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">    
@@ -47,6 +39,14 @@
                           </svg>
                     </a>
                   </li>
+                  <li class="nav-item">
+                      <!-- This is a contact-us link -->
+                      <a class="nav-link" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-envelope-open-fill" viewBox="0 0 16 16">
+                            <path d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z"/>
+                          </svg>
+                      </a>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -63,8 +63,8 @@
         <!-- Jumbotron -->
 
         <!-- Main segment - Sections will be set to display:none when the user doesn't need them -->
-        <section class="container col-xxl-8 px-4 py-5">
-            <section class="row flex-lg-row-reverse align-items-center g-5 py-5 landingSection">
+        <section class="container col-xxl-8 px-4 py-5 mainPage">
+            <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide">
                 <!-- Image... currently a stock placeholder image until we find something better -->
                 <div class="col-10 col-sm-8 col-lg-6">
                     <img src="./assets/img/brown_wooden_table_and_chairs-scopio-428d7102-f7f6-4ee5-8f3a-cbab03480eb2.jpg" class="d-block mx-lg-auto img-fluid mainPic" alt="Photo by  Pavel Musinszkij  on  Scopio" width=100% height=auto loading="lazy">
@@ -73,7 +73,7 @@
                 <div class="col-lg-6">
                     <h1 class="display-5 fw-bold lh-1 mb-3">Leave the Planning To Us</h1>
                     <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
+                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
 
 
                     <!-- This button needs to set display:none for .landingSection and .myJumbotron  then set display:inline for checkboxSection-->
@@ -83,21 +83,13 @@
                 </div>
             </section>
 
-            <section class="row flex-lg-row-reverse align-items-center g-5 py-5 checkboxSection">
+            <section class="checkBox row flex-lg-row-reverse align-items-center g-5 py-5 hide">
                 <!-- Checkbox Section -->
                 <div class="col-lg-12 parameters">
                     <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Just a Few Quick Questions:</h1>
-                    <form>
-                        <div class="mb-3">
-                          <label for="address" class="form-label">Address or city</label>
-                          <input type="address" class="form-control" id="address">
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                          <div id='addressEncoded'></div>
-                        </div>
-                    </form>
                     <p class="text-center">We need to know the broad strokes of what you're looking for in a date. Please check any of the following boxes so we can help narrow down the options for your exciting outing!</p>
                     <section id="checkboxQuestions">
-                        <ul class="list-group list-group-horizontal text-center">
+                        <ul class="list-group list-group-horizontal text-center eventsCheckbox">
                             <li class="list-group-item  flex-fill border-white">
                                 <input class="form-check-input me-1" type="checkbox" id = "cb1" value="Activity" >
                                 <label for = "cb1">Include an Activity</label>
@@ -137,7 +129,7 @@
 
 
                         <h3 class="text-center questionPrompt">Would you like to go out or stay in?</h3>
-                        <ul class="list-group list-group-horizontal text-center">
+                        <ul class="list-group list-group-horizontal text-center inOrOut">
                             <li class="list-group-item  flex-fill border-white">
                                 <input class="form-check-input me-1" id = "cb21" type="checkbox" value="" aria-label="...">
                                 Go Out
@@ -150,7 +142,7 @@
 
 
                         <h3 class="text-center questionPrompt">At what time of day will the date take place? </h3>
-                        <ul class="list-group list-group-horizontal text-center">
+                        <ul class="list-group list-group-horizontal text-center timeOfDay">
                             <li class="list-group-item  flex-fill border-white">
                                 <input class="form-check-input me-1" id= "cb31" type="checkbox" value="" aria-label="...">
                                 Morning
@@ -180,21 +172,15 @@
 
             </section>
 
-            <section class="row flex-lg-row-reverse align-items-center g-5 py-5 questionSection">
+            <section class="questionsS row flex-lg-row-reverse align-items-center g-5 py-5 questionSection hide">
                 <!-- Question-asking Section -->
                 <section class="col-lg-12 questions">
                     <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Almost Done!</h1>
                     <p class="text-center">We just need to ask you a few specific questions to really fine-tune your dating experience!</p>
                 </div>
                 <section class="col-lg-12">
-                    <h3 class="text-center">Question</h3>
-                    <div class= "justify-content-md-center">
-                        <ul class="answerClass">
-                            <li>
-                                <button class="btn btn-primary btnAnswer w-100" type="button">Answer</button>
-                            </li>
-                        </ul>
-                    </div>
+                    <h3 class="text-center" id="questionTitle"></h3>
+                    <div class= "justify-content-md-center" id="answers"></div>
                 </section>
             </section>
 
@@ -214,7 +200,14 @@
 
     
     <!-- jQuery Code -->
-
+    <script 
+        src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+    <!-- Moment.js -->
+    <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Script used for questions -->
@@ -223,9 +216,8 @@
     <script src="logic.js"></script>
     <!-- Generalized, page-specific javaScript -->
     <script src="./assets/js/script.js"></script>
-    
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&searchNearby=initMap%22%3E"></script>
-
+    <!-- Temporarily commented out 
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>-->
     
 
 </body>
