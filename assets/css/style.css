@@ -16,10 +16,11 @@ main {
 }
 
 
+/* display:block by default, display:none after "Begin" button is pushed */
 .myJumbotron {
     background-color: var(--light) !important;
     color: var(--dark);
-    display: none;
+    display: block;
 }
 
 .bg-dark {
@@ -77,4 +78,12 @@ main {
 .answerClass {
     list-style-type: none;
     width: 100%;
+}
+
+.btnSubmit {
+    background: var(--dark) !important;
+}
+
+#addressSection {
+    display: '';
 }
