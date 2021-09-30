@@ -48,6 +48,55 @@ if (activity.checked==true) {
     };
     
     console.log(questions);
+    displayQuestions(questions);
 }
 
 submit.addEventListener("click", pushArray);
+
+// Variables set for the questions.
+
+var questionsTitle = document.getElementById("questionTitle");
+// var firstQuestion = questions[questionOne];
+var choices = document.getElementById("answers");
+
+function dateQuestions() {
+    
+  
+    // Displaying the question.
+    questionsTitle.textContent = firstQuestion.title;
+  
+    // clearing out the old answers
+    answers.innerHTML = "";
+  
+    // getting the new answers
+    firstQuestion.choices.forEach(function(choices, i) {
+      // making buttons for each choice
+      
+      choicesNode.textContent = i + 1 + ". " + choice;
+      
+    });
+} 
+
+function displayQuestions (questions){
+    console.log(questions)
+    
+    for (i=0; i < questions.length; i++){
+        var tempQuestion = questions[i]
+        var questionTitle = tempQuestion.title
+        console.log(questionTitle)
+        for (i=0; i< tempQuestion.choices.length; i++){
+            var choicesLi = tempQuestion.choices[i]
+            console.log(choicesLi)
+            var choicesNode = document.createElement("button");
+            choicesNode.setAttribute("class", "btn btn-primary btnAnswer w-100");
+            choices.setAttribute("value", choices);
+            
+            // Adding an event listener click function to each choice.
+            choicesNode.onclick = questionClick;
+            
+            // Displaying it all on the page.
+            choices.appendChild(choicesNode);
+            choicesNode.appendChild(choicesLi);
+        }
+    }
+}
