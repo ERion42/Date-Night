@@ -4,25 +4,220 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">    
+    <title>Date Nite</title>
 </head>
-<body>
-    <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&getPlaces=initMap%22%3E">
-    </script>
-    <script src="./assets/js/script.js"></script>
-    <form>
-        <div class="mb-3">
-          <label for="address" class="form-label">Address or city</label>
-          <input type="address" class="form-control" id="address">
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <div id='addressEncoded'></div>
-        </div>
-    </form>
+<body cz-shortcut-listen="true">
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+            <div class="container-fluid">
+              <!-- Not sure if this should be a link or not-->
+              <a class="navbar-brand" href="#">Date Night</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="collapse navbar-collapse" id="myNavBar">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <!-- This link could be used to take us back to the main page -->
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                          </svg>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <!-- This link could be used to refresh data -->
+                    <a class="nav-link" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+                          </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        <!-- Navbar -->
+    </header>
 
+    <main>
+        <!-- Jumbotron : This banner might stay throughout the application's pages, or it could be replaced by a banner image -->
+        <div class="p-5 text-center bg-light myJumbotron">
+            <h1 class="mb-3">Date Night Picker</h1>
+            <h4 class="mb-3">Put Your Date In Our Hands</h4>
+        </div>
+        <!-- Jumbotron -->
+
+        <!-- Main segment - Sections will be set to display:none when the user doesn't need them -->
+        <section class="container col-xxl-8 px-4 py-5">
+            <section class="row flex-lg-row-reverse align-items-center g-5 py-5 landingSection">
+                <!-- Image... currently a stock placeholder image until we find something better -->
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src="./assets/img/brown_wooden_table_and_chairs-scopio-428d7102-f7f6-4ee5-8f3a-cbab03480eb2.jpg" class="d-block mx-lg-auto img-fluid mainPic" alt="Photo by  Pavel Musinszkij  on  Scopio" width=100% height=auto loading="lazy">
+                </div>
+                <!-- This section explains the general premise of the application and how to use it -->
+                <div class="col-lg-6">
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Leave the Planning To Us</h1>
+                    <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
+
+
+                    <!-- This button needs to set display:none for .landingSection and .myJumbotron  then set display:inline for checkboxSection-->
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 btnBegin">Begin</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="row flex-lg-row-reverse align-items-center g-5 py-5 checkboxSection">
+                <!-- Checkbox Section -->
+                <div class="col-lg-12 parameters">
+                    <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Just a Few Quick Questions:</h1>
+                    <p class="text-center">We need to know the broad strokes of what you're looking for in a date. Please check any of the following boxes so we can help narrow down the options for your exciting outing!</p>
+                    <section id="checkboxQuestions">
+                        <ul class="list-group list-group-horizontal text-center">
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb1" value="Activity" >
+                                <label for = "cb1">Include an Activity</label>
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb2" value="Dinner" >
+                                <label for = "cb1">Include Dinner</label>
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb3" value="Movie">
+                                <label for = "cb1">Include a Movie</label>
+                            </li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal text-center">
+                            <!-- <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb5" value="Dress Code" >
+                                <label for = "cb1">Include Dress Code</label>
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb6" value="Music" >
+                                <label for = "cb1">Include a Music</label>
+                            </li> -->
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb4" value="Drinks" >
+                                <label for = "cb1">Go for Drinks</label>
+                            </li>
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb5" value="Event" >
+                                <label for = "cb1">Include an Event</label>
+                            </li>
+                            <!-- <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb8" value="Challenge" >
+                                <label for = "cb1">Include a Challenge</label>
+                            </li> -->
+                        </ul>
+
+
+
+                        <h3 class="text-center questionPrompt">Would you like to go out or stay in?</h3>
+                        <ul class="list-group list-group-horizontal text-center">
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" id = "cb21" type="checkbox" value="" aria-label="...">
+                                Go Out
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" id= "cb22" type="checkbox" value="" aria-label="...">
+                                Stay In
+                            </li>
+                        </ul>
+
+
+                        <h3 class="text-center questionPrompt">At what time of day will the date take place? </h3>
+                        <ul class="list-group list-group-horizontal text-center">
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" id= "cb31" type="checkbox" value="" aria-label="...">
+                                Morning
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" id= "cb32" type="checkbox" value="" aria-label="...">
+                                Midday
+                            </li>
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" id= "cb33" type="checkbox" value="" aria-label="...">
+                                Afternoon
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" id= "cb34" type="checkbox" value="" aria-label="...">
+                                Night
+                            </li>
+                        </ul>
+
+                    </section>
+
+
+                    <!-- This button needs to set display:none for .landingSection and .myJumbotron, but also set display:none for checkboxSection and display:flex for qnaSection -->
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 btnContinue" id ="checkboxSubmit">Continue</button>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="row flex-lg-row-reverse align-items-center g-5 py-5 questionSection">
+                <!-- Question-asking Section -->
+                <section class="col-lg-12 questions">
+                    <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Almost Done!</h1>
+                    <p class="text-center">We just need to ask you a few specific questions to really fine-tune your dating experience!</p>
+                </div>
+                <section class="col-lg-12">
+                    <h3 class="text-center">Question</h3>
+                    <div class= "justify-content-md-center">
+                        <ul class="answerClass">
+                            <li>
+                                <button class="btn btn-primary btnAnswer w-100" type="button">Answer</button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+
+        </section>
+
+
+
+
+
+
+    </main>
+        
+    <!-- Need a footer Section -->    
+        
+
+
+    
+    <!-- jQuery Code -->
+    <script 
+        src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+    <!-- Moment.js -->
+    <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Script used for questions -->
+    <script src="questions.js"></script>
+    <!-- Script used for question logic -->
+    <script src="logic.js"></script>
+    <!-- Generalized, page-specific javaScript -->
     <script src="./assets/js/script.js"></script>
+    <!-- Temporarily commented out 
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>
+-->
+    
+
 </body>
 </html>
