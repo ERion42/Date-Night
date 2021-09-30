@@ -12,28 +12,37 @@
 <body cz-shortcut-listen="true">
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
             <div class="container-fluid">
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-mdb-toggle="collapse"
-                data-mdb-target="#navbarExample01"
-                aria-controls="navbarExample01"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarExample01">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
-                </li>
+              <!-- Not sure if this should be a link or not-->
+              <a class="navbar-brand" href="#">Date Night</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+        
+              <div class="collapse navbar-collapse" id="myNavBar">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <!-- This link could be used to take us back to the main page -->
+                    <a class="nav-link active" aria-current="page" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-house-door-fill" viewBox="0 0 16 16">
+                            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                          </svg>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <!-- This link could be used to refresh data -->
+                    <a class="nav-link" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+                          </svg>
+                    </a>
+                  </li>
                 </ul>
+              </div>
             </div>
-            </div>
-        </nav>
+          </nav>
         <!-- Navbar -->
     </header>
 
@@ -48,11 +57,13 @@
         <!-- Body segment -->
         <section class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5 landingSection">
+                <!-- Image... currently a stock placeholder image until we find something better -->
                 <div class="col-10 col-sm-8 col-lg-6">
-                    <img src="./assets/img/brown_wooden_table_and_chairs-scopio-428d7102-f7f6-4ee5-8f3a-cbab03480eb2.jpg" class="d-block mx-lg-auto img-fluid mainPic" alt="Bootstrap Themes" width=100% height=auto loading="lazy">
+                    <img src="./assets/img/brown_wooden_table_and_chairs-scopio-428d7102-f7f6-4ee5-8f3a-cbab03480eb2.jpg" class="d-block mx-lg-auto img-fluid mainPic" alt="Photo by  Pavel Musinszkij  on  Scopio" width=100% height=auto loading="lazy">
                 </div>
+                <!-- This section explains the general premise of the application and how to use it -->
                 <div class="col-lg-6">
-                    <h1 class="display-5 fw-bold lh-1 mb-3">Responsive left-aligned hero with image</h1>
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Leave the Planning To Us</h1>
                     <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
@@ -62,7 +73,55 @@
             </div>
         </section>
 
-    
+        <!-- Accordion Begins -->
+        <section class="accordion" id="userInputAccordion">
+            <section class="accordion-item">
+              <h2 class="accordion-header" id="userInputAccordion-headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseOne" aria-expanded="true" aria-controls="userInputAccordion-collapseOne">
+                  General Context
+                </button>
+              </h2>
+              <div id="userInputAccordion-collapseOne" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingOne">
+                <div class="accordion-body">
+                  <!-- Checkbox Questions -->
+                    <h2 class="text-center">Preferences:</h2>
+                </div>
+              </div>
+            </section>
+            <section class="accordion-item">
+              <h2 class="accordion-header" id="userInputAccordion-headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseTwo" aria-expanded="false" aria-controls="userInputAccordion-collapseTwo">
+                  Personal Preferences
+                </button>
+              </h2>
+              <div id="userInputAccordion-collapseTwo" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingTwo">
+                <div class="accordion-body">
+                  <!-- Multiple Choice Questions -->
+                    <h2 class="text-center">Ask questions on Preferences:</h2>
+                    <div class="questionsContainer">
+                        <button type="button" class="btn btn-primary btn-lg answerBtn">Do you like activity A?</button>
+                        <button type="button" class="btn btn-primary btn-lg answerBtn">Do you like activity B?</button>
+                        <button type="button" class="btn btn-primary btn-lg answerBtn">Do you like activity C?</button>
+                        <button type="button" class="btn btn-primary btn-lg answerBtn">Do you like activity D?</button>
+                    </div>
+                </div>
+              </div>
+            </section>
+            <section class="accordion-item">
+              <h2 class="accordion-header" id="userInputAccordion-headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseThree" aria-expanded="false" aria-controls="userInputAccordion-collapseThree">
+                  Final Options
+                </button>
+              </h2>
+              <div id="userInputAccordion-collapseThree" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingThree">
+                <div class="accordion-body">
+                  <!-- Final  -->
+                    <h2 class="text-center">Your Choices:</h2>
+                </div>
+              </div>
+            </section>
+        </section>
+        <!-- Accordion Ends-->
 
     </main>
         
@@ -75,13 +134,16 @@
     <script 
         src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
     </script>
+    <!-- Moment.js -->
     <script
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
     ></script>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Script used for questions -->
     <script src="./questions.js"></script>
+    <!-- Generalized, page-specific javaScript -->
     <script src="./assets/js/script.js"></script>
     <!-- Temporarily commented out 
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>
