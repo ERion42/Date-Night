@@ -54,9 +54,9 @@
         </div>
         <!-- Jumbotron -->
 
-        <!-- Body segment -->
+        <!-- Main segment - Sections will be set to display:none when the user doesn't need them -->
         <section class="container col-xxl-8 px-4 py-5">
-            <div class="row flex-lg-row-reverse align-items-center g-5 py-5 landingSection">
+            <section class="row flex-lg-row-reverse align-items-center g-5 py-5 landingSection">
                 <!-- Image... currently a stock placeholder image until we find something better -->
                 <div class="col-10 col-sm-8 col-lg-6">
                     <img src="./assets/img/brown_wooden_table_and_chairs-scopio-428d7102-f7f6-4ee5-8f3a-cbab03480eb2.jpg" class="d-block mx-lg-auto img-fluid mainPic" alt="Photo by  Pavel Musinszkij  on  Scopio" width=100% height=auto loading="lazy">
@@ -66,62 +66,129 @@
                     <h1 class="display-5 fw-bold lh-1 mb-3">Leave the Planning To Us</h1>
                     <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
-                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+
+
+                    <!-- This button needs to set display:none for .landingSection and .myJumbotron  then set display:inline for checkboxSection-->
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
                         <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 btnBegin">Begin</button>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Accordion Begins -->
-        <section class="accordion" id="userInputAccordion">
-            <section class="accordion-item">
-              <h2 class="accordion-header" id="userInputAccordion-headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseOne" aria-expanded="true" aria-controls="userInputAccordion-collapseOne">
-                  General Context
-                </button>
-              </h2>
-              <div id="userInputAccordion-collapseOne" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingOne">
-                <div class="accordion-body">
-                  <!-- Checkbox Questions -->
-                    <h2 class="text-center">Preferences:</h2>
-                </div>
-              </div>
             </section>
-            <section class="accordion-item">
-              <h2 class="accordion-header" id="userInputAccordion-headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseTwo" aria-expanded="false" aria-controls="userInputAccordion-collapseTwo">
-                  Personal Preferences
-                </button>
-              </h2>
-              <div id="userInputAccordion-collapseTwo" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingTwo">
-                <div class="accordion-body">
-                  <!-- Multiple Choice Questions -->
-                    <h2 class="text-center">Ask questions on Preferences:</h2>
-                    <div class="questionsContainer">
-                        <button type="button" class="btn btn-primary btn-lg answerBtn">Do you like activity A?</button>
-                        <button type="button" class="btn btn-primary btn-lg answerBtn">Do you like activity B?</button>
-                        <button type="button" class="btn btn-primary btn-lg answerBtn">Do you like activity C?</button>
-                        <button type="button" class="btn btn-primary btn-lg answerBtn">Do you like activity D?</button>
+
+            <section class="row flex-lg-row-reverse align-items-center g-5 py-5 checkboxSection">
+                <!-- Checkbox Section -->
+                <div class="col-lg-12 parameters">
+                    <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Just a Few Quick Questions:</h1>
+                    <p class="text-center">We need to know the broad strokes of what you're looking for in a date. Please check any of the following boxes so we can help narrow down the options for your exciting outing!</p>
+                    <section id="checkboxQuestions">
+                        <ul class="list-group list-group-horizontal text-center">
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb1" value="Activity" >
+                                <label for = "cb1">Include an Activity</label>
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb2" value="Dinner" >
+                                <label for = "cb1">Include Dinner</label>
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb3" value="Movie">
+                                <label for = "cb1">Include a Movie</label>
+                            </li>
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb4" value="Drinks" >
+                                <label for = "cb1">Go for Drinks</label>
+                            </li>
+                        </ul>
+                        <ul class="list-group list-group-horizontal text-center">
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb5" value="Dress Code" >
+                                <label for = "cb1">Include Dress Code</label>
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb6" value="Music" >
+                                <label for = "cb1">Include a Music</label>
+                            </li>
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb7" value="Event" >
+                                <label for = "cb1">Include an Event</label>
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb8" value="Challenge" >
+                                <label for = "cb1">Include a Challenge</label>
+                            </li>
+                        </ul>
+
+
+
+                        <h3 class="text-center questionPrompt">Would you like to go out or stay in?</h3>
+                        <ul class="list-group list-group-horizontal text-center">
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                Go Out
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                Stay In
+                            </li>
+                        </ul>
+
+
+                        <h3 class="text-center questionPrompt">At what time of day will the date take place? </h3>
+                        <ul class="list-group list-group-horizontal text-center">
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                Morning
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                Midday
+                            </li>
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                Afternoon
+                            </li>
+                            <li class="list-group-item flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+                                Night
+                            </li>
+                        </ul>
+
+                    </section>
+
+
+                    <!-- This button needs to set display:none for .landingSection and .myJumbotron, but also set display:none for checkboxSection and display:flex for qnaSection -->
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 btnContinue">Continue</button>
                     </div>
                 </div>
-              </div>
+
             </section>
-            <section class="accordion-item">
-              <h2 class="accordion-header" id="userInputAccordion-headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseThree" aria-expanded="false" aria-controls="userInputAccordion-collapseThree">
-                  Final Options
-                </button>
-              </h2>
-              <div id="userInputAccordion-collapseThree" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingThree">
-                <div class="accordion-body">
-                  <!-- Final  -->
-                    <h2 class="text-center">Your Choices:</h2>
+
+            <section class="row flex-lg-row-reverse align-items-center g-5 py-5 questionSection">
+                <!-- Question-asking Section -->
+                <section class="col-lg-12 questions">
+                    <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Almost Done!</h1>
+                    <p class="text-center">We just need to ask you a few specific questions to really fine-tune your dating experience!</p>
                 </div>
-              </div>
+                <section class="col-lg-12">
+                    <h3 class="text-center">Question</h3>
+                    <div class= "justify-content-md-center">
+                        <ul class="answerClass">
+                            <li>
+                                <button class="btn btn-primary btnAnswer w-100" type="button">Answer</button>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </section>
+
+
         </section>
-        <!-- Accordion Ends-->
+
+
+
+
+
 
     </main>
         

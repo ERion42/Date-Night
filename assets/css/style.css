@@ -14,6 +14,7 @@ main {
 .myJumbotron {
     background-color: var(--light) !important;
     color: var(--dark);
+    display: none;
 }
 
 .bg-dark {
@@ -33,4 +34,42 @@ main {
     grid-template-rows: 1fr 1fr;
     grid-gap: 5px;
 
+}
+
+/* display:flex by default, display:none after "Begin" button is pushed */
+.landingSection {
+    margin-top: 50px;
+    display: flex;
+}
+
+/* display:none by default, display:flex after "Begin" button is pushed, display:none after "Continue" button is pushed */
+.checkboxSection {
+    display: flex;
+}
+
+.btnContinue {
+    margin-top: 15px;
+    background: var(--dark) !important;
+}
+
+.btnAnswer {
+    background: var(--dark) !important;
+}
+
+.questionPrompt {
+    margin: 35px 0 35px 0;
+}
+
+/* display:none by default, display:inline after "Continue" button is pushed */
+.questions {
+    display: inline;
+}
+
+.questions h3 {
+    margin: 55px;
+}
+
+.answerClass {
+    list-style-type: none;
+    width: 100%;
 }
