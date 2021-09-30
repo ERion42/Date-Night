@@ -55,7 +55,7 @@
         <!-- Jumbotron -->
 
         <!-- Main segment - Sections will be set to display:none when the user doesn't need them -->
-        <section class="container col-xxl-8 px-4 py-5">
+        <section class="container col-xxl-8 px-4 py-5 mainPage">
             <section class="row flex-lg-row-reverse align-items-center g-5 py-5 landingSection">
                 <!-- Image... currently a stock placeholder image until we find something better -->
                 <div class="col-10 col-sm-8 col-lg-6">
@@ -65,7 +65,7 @@
                 <div class="col-lg-6">
                     <h1 class="display-5 fw-bold lh-1 mb-3">Leave the Planning To Us</h1>
                     <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
+                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
 
 
                     <!-- This button needs to set display:none for .landingSection and .myJumbotron  then set display:inline for checkboxSection-->
@@ -73,6 +73,20 @@
                         <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 btnBegin">Begin</button>
                     </div>
                 </div>
+            </section>
+
+            <section class="row flex-lg-row-reverse align-items-center g-5 py-5 addressSection">
+                <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Just a Few Quick Questions:</h1>
+                <p1 class="lead text-center">We need to know where to look for fun stuff for you to do!</p1>
+                <p1 class="lead text-center">Please give us an address or city:</p1>
+                <form>
+                    <div class="mb-3 addressInput">
+                      <label for="address" class="form-label">Address or city</label>
+                      <input type="address" class="form-control" id="address">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <div id='addressEncoded'></div>
+                    </div>
+                </form>
             </section>
 
             <section class="row flex-lg-row-reverse align-items-center g-5 py-5 checkboxSection">

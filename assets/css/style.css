@@ -11,10 +11,11 @@ main {
     color: var(--dark);
 }
 
+/* display:block by default, display:none after "Begin" button is pushed */
 .myJumbotron {
     background-color: var(--light) !important;
     color: var(--dark);
-    display: none;
+    display: block;
 }
 
 .bg-dark {
