@@ -36,7 +36,9 @@ var night = document.getElementById("cb34");
 
 // If statements to link the checklists to the corresponding question arrays.
 var pushArray = function() {
-if (activity.checked==true) {
+$('.checkBox').toggleClass('checkboxSection')
+$('.questionsS').toggleClass('hide')
+    if (activity.checked==true) {
     questions.push(...activityQuestions);
     }
     
@@ -59,7 +61,6 @@ if (activity.checked==true) {
     if (goOut.checked==true) {
         questions.push(...goingOut);
     };
-    
     console.log(questions);
     displayQuestions(questions);
 }
@@ -67,10 +68,10 @@ if (activity.checked==true) {
 submit.addEventListener("click", pushArray);
 
 // Variables set for the questions.
-
+var index = 0;
 var questionsTitle = document.getElementById("questionTitle");
-// var firstQuestion = questions[questionOne];
-var choices = document.getElementById("choices");
+
+var choices = document.getElementById("answers");
 
 function dateQuestions() {
     
@@ -89,29 +90,94 @@ function dateQuestions() {
       
     });
 } 
+var selections = [];
+function displayQuestions (){
 
-function displayQuestions (questions){
-    $('.checkBox').toggleClass('checkboxSection')
-    $('.questionsS').toggleClass('hide')
-    console.log(questions)
+
+    var firstQuestion = questions[index];
+
     
-    for (i=0; i < questions.length; i++){
-        var tempQuestion = questions[i]
-        var questionTitle = tempQuestion.title
-        console.log(questionTitle)
-        for (i=0; i< tempQuestion.choices.length; i++){
-            var choicesLi = tempQuestion.choices[i]
-            console.log(choicesLi)
+        var count = index+1;
+        if (index+1 > questions.length){
+            $('.questionsS').toggleClass('hide')
+
+            // Results();
+            testing()
+        } else {
+        var questionName = firstQuestion.title;
+        questionsTitle.append(questionName);
+        for (i=0; i< firstQuestion.choices.length; i++){
+            var choicesLi = firstQuestion.choices[i];;
             var choicesNode = document.createElement("button");
             choicesNode.setAttribute("class", "btn btn-primary btnAnswer w-100");
             choicesNode.setAttribute("value", choices);
-            
+            choices.append(choicesNode);
+            choicesNode.append(choicesLi);
+            }   
             // Adding an event listener click function to each choice.
-            choicesNode.onclick = questionClick;
+            $('.btnAnswer').on("click",function(event){
+                index ++
+                var potato = {
+                    result: firstQuestion.result,
+                    final: event.target.innerHTML
+                }
+                selections.push(potato)
+                // selections.push(event.target.innerHTML)
+                localStorage.setItem("finalAnswers", JSON.stringify(selections))
+                $('#questionTitle').empty()
+                $('#answers').empty()
+                displayQuestions();
+            })
+
             
-            // Displaying it all on the page.
-            choices.appendChild(choicesNode);
-            choicesNode.appendChild(choicesLi);
+        }
+        // Displaying it all on the page.
+    }
+    
+    var Results = function (){
+        JSON.parse(localStorage.getItem("finalAnswers"));
+    }
+
+active = []
+foodZ = []
+general = []
+going = []
+movieX = []
+drinkz = []
+eventq = []
+
+function testing(){
+    var selections = JSON.parse(localStorage.getItem("finalAnswers"));
+    console.log(selections)
+    for (i=0; i < selections.length; i++){
+        if (selections[i].result == "general"){
+            general.push(selections[i].final)
+        }
+        
+        if (selections[i].result == "goingOut"){
+            going.push(selections[i].final)
+        }
+        if (selections[i].result == "activity"){
+            active.push(selections[i].final)
+        }
+        if (selections[i].result == "movie"){
+            movieX.push(selections[i].final)
+        }
+        if (selections[i].result == "drinky"){
+            drinkz.push(selections[i].final)
+        }
+        if (selections[i].result == "eventr"){
+            eventq.push(selections[i].final)
+        }
+        if (selections[i].result == "food"){
+            foodZ.push(selections[i].final)
         }
     }
+    localStorage.setItem("general" , general)
+    localStorage.setItem("food" , foodZ)
+    localStorage.setItem("active" , active);
+    localStorage.setItem("goingO" , going)
+    localStorage.setItem("event" , eventq)
+    localStorage.setItem("drink" , drinkz)
+    localStorage.setItem("movie" , movieX)
 }
