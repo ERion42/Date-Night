@@ -1,3 +1,16 @@
+$('.btnBegin').on('click',function(){
+    $('.firstPage').toggleClass('landingSection')
+    $('.checkBox').toggleClass('checkboxSection')
+})
+
+
+
+
+
+
+
+
+
 var questions = [];
 var submit = document.querySelector("#checkboxSubmit");
 
@@ -78,6 +91,8 @@ function dateQuestions() {
 } 
 
 function displayQuestions (questions){
+    $('.checkBox').toggleClass('checkboxSection')
+    $('.questionsS').toggleClass('hide')
     console.log(questions)
     
     for (i=0; i < questions.length; i++){
