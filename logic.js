@@ -1,5 +1,5 @@
 var questions = [];
-var submit = document.querySelector(".btnContinue");
+var submit = document.querySelector("#checkboxSubmit");
 
 // Variables set for each event checkbox.
 
@@ -23,8 +23,8 @@ var night = document.getElementById("cb34");
 
 // If statements to link the checklists to the corresponding question arrays.
 var pushArray = function() {
-    if (activity.checked==true) {
-        questions.push(...activityQuestions);
+if (activity.checked==true) {
+    questions.push(...activityQuestions);
     }
     
     if (food.checked==true) {
@@ -45,9 +45,9 @@ var pushArray = function() {
     
     if (goOut.checked==true) {
         questions.push(...goingOut);
-    }    
-    console.log(questions);
+    };
     
-};
+    console.log(questions);
+}
 
 submit.addEventListener("click", pushArray);

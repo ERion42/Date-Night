@@ -94,28 +94,28 @@
                                 <input class="form-check-input me-1" type="checkbox" id = "cb3" value="Movie">
                                 <label for = "cb1">Include a Movie</label>
                             </li>
-                            <li class="list-group-item  flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" id = "cb4" value="Drinks" >
-                                <label for = "cb1">Go for Drinks</label>
-                            </li>
                         </ul>
                         <ul class="list-group list-group-horizontal text-center">
-                            <li class="list-group-item flex-fill border-white">
+                            <!-- <li class="list-group-item flex-fill border-white">
                                 <input class="form-check-input me-1" type="checkbox" id = "cb5" value="Dress Code" >
                                 <label for = "cb1">Include Dress Code</label>
                             </li>
                             <li class="list-group-item flex-fill border-white">
                                 <input class="form-check-input me-1" type="checkbox" id = "cb6" value="Music" >
                                 <label for = "cb1">Include a Music</label>
+                            </li> -->
+                            <li class="list-group-item  flex-fill border-white">
+                                <input class="form-check-input me-1" type="checkbox" id = "cb4" value="Drinks" >
+                                <label for = "cb1">Go for Drinks</label>
                             </li>
                             <li class="list-group-item  flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" id = "cb7" value="Event" >
+                                <input class="form-check-input me-1" type="checkbox" id = "cb5" value="Event" >
                                 <label for = "cb1">Include an Event</label>
                             </li>
-                            <li class="list-group-item flex-fill border-white">
+                            <!-- <li class="list-group-item flex-fill border-white">
                                 <input class="form-check-input me-1" type="checkbox" id = "cb8" value="Challenge" >
                                 <label for = "cb1">Include a Challenge</label>
-                            </li>
+                            </li> -->
                         </ul>
 
 
@@ -123,12 +123,12 @@
                         <h3 class="text-center questionPrompt">Would you like to go out or stay in?</h3>
                         <ul class="list-group list-group-horizontal text-center inOrOut">
                             <li class="list-group-item  flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" id="cb21" value="Out" aria-label="...">
-                                <label for = "cb1">Go Out</label>
+                                <input class="form-check-input me-1" id = "cb21" type="checkbox" value="" aria-label="...">
+                                Go Out
                             </li>
                             <li class="list-group-item flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" id="cb22" value="In" aria-label="...">
-                                <label for = "cb2">Stay In</label> 
+                                <input class="form-check-input me-1" id= "cb22" type="checkbox" value="" aria-label="...">
+                                Stay In
                             </li>
                         </ul>
 
@@ -136,20 +136,20 @@
                         <h3 class="text-center questionPrompt">At what time of day will the date take place? </h3>
                         <ul class="list-group list-group-horizontal text-center timeOfDay">
                             <li class="list-group-item  flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" id="cb31" value="Morning" aria-label="...">
-                                <label for = "cb1">Morning</label>
+                                <input class="form-check-input me-1" id= "cb31" type="checkbox" value="" aria-label="...">
+                                Morning
                             </li>
                             <li class="list-group-item flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" id="cb32" value="Midday" aria-label="...">
-                                <label for = "cb2">Midday</label>
+                                <input class="form-check-input me-1" id= "cb32" type="checkbox" value="" aria-label="...">
+                                Midday
                             </li>
                             <li class="list-group-item  flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" id="cb33" value="Afternoon" aria-label="...">
-                                <label for = "cb2">Afternoon</label>
+                                <input class="form-check-input me-1" id= "cb33" type="checkbox" value="" aria-label="...">
+                                Afternoon
                             </li>
                             <li class="list-group-item flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" id="cb34" value="Night" aria-label="...">
-                                <label for = "cb2">Night</label>
+                                <input class="form-check-input me-1" id= "cb34" type="checkbox" value="" aria-label="...">
+                                Night
                             </li>
                         </ul>
 
@@ -158,7 +158,7 @@
 
                     <!-- This button needs to set display:none for .landingSection and .myJumbotron, but also set display:none for checkboxSection and display:flex for qnaSection -->
                     <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 btnContinue">Continue</button>
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 btnContinue" id ="checkboxSubmit">Continue</button>
                     </div>
                 </div>
 
@@ -209,7 +209,9 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!-- Script used for questions -->
-    <script src="./questions.js"></script>
+    <script src="questions.js"></script>
+    <!-- Script used for question logic -->
+    <script src="logic.js"></script>
     <!-- Generalized, page-specific javaScript -->
     <script src="./assets/js/script.js"></script>
     <!-- Temporarily commented out 
