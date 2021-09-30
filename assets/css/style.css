@@ -11,6 +11,14 @@ main {
     color: var(--dark);
 }
 
+#hide {
+    display:none;
+}
+
+#show {
+    display: block;
+}
+
 .myJumbotron {
     background-color: var(--light) !important;
     color: var(--dark);
