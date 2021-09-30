@@ -12,9 +12,6 @@
 
 
 
-console.log(foodQuestions)
-
-
 
 
 
