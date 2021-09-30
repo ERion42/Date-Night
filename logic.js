@@ -70,7 +70,7 @@ submit.addEventListener("click", pushArray);
 
 var questionsTitle = document.getElementById("questionTitle");
 // var firstQuestion = questions[questionOne];
-var choices = document.getElementById("answers");
+var choices = document.getElementById("choices");
 
 function dateQuestions() {
     
@@ -104,7 +104,7 @@ function displayQuestions (questions){
             console.log(choicesLi)
             var choicesNode = document.createElement("button");
             choicesNode.setAttribute("class", "btn btn-primary btnAnswer w-100");
-            choices.setAttribute("value", choices);
+            choicesNode.setAttribute("value", choices);
             
             // Adding an event listener click function to each choice.
             choicesNode.onclick = questionClick;
