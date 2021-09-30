@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
@@ -11,6 +13,16 @@
     <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&getPlaces=initMap%22%3E">
     </script>
+    <script src="./assets/js/script.js"></script>
+    <form>
+        <div class="mb-3">
+          <label for="address" class="form-label">Address or city</label>
+          <input type="address" class="form-control" id="address">
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <div id='addressEncoded'></div>
+        </div>
+    </form>
+
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
