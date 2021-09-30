@@ -1,5 +1,5 @@
 var questions = [];
-var submit = document.querySelector("button");
+var submit = document.querySelector(".btnContinue");
 
 // Variables set for each event checkbox.
 
@@ -44,7 +44,7 @@ var pushArray = function() {
     }
     
     if (goOut.checked==true) {
-        questions.push(...goOutQuestions);
+        questions.push(...goingOut);
     }    
     console.log(questions);
     

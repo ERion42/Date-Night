@@ -81,7 +81,7 @@
                     <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Just a Few Quick Questions:</h1>
                     <p class="text-center">We need to know the broad strokes of what you're looking for in a date. Please check any of the following boxes so we can help narrow down the options for your exciting outing!</p>
                     <section id="checkboxQuestions">
-                        <ul class="list-group list-group-horizontal text-center">
+                        <ul class="list-group list-group-horizontal text-center eventsCheckbox">
                             <li class="list-group-item  flex-fill border-white">
                                 <input class="form-check-input me-1" type="checkbox" id = "cb1" value="Activity" >
                                 <label for = "cb1">Include an Activity</label>
@@ -121,35 +121,35 @@
 
 
                         <h3 class="text-center questionPrompt">Would you like to go out or stay in?</h3>
-                        <ul class="list-group list-group-horizontal text-center">
+                        <ul class="list-group list-group-horizontal text-center inOrOut">
                             <li class="list-group-item  flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                Go Out
+                                <input class="form-check-input me-1" type="checkbox" id="cb21" value="Out" aria-label="...">
+                                <label for = "cb1">Go Out</label>
                             </li>
                             <li class="list-group-item flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                Stay In
+                                <input class="form-check-input me-1" type="checkbox" id="cb22" value="In" aria-label="...">
+                                <label for = "cb2">Stay In</label> 
                             </li>
                         </ul>
 
 
                         <h3 class="text-center questionPrompt">At what time of day will the date take place? </h3>
-                        <ul class="list-group list-group-horizontal text-center">
+                        <ul class="list-group list-group-horizontal text-center timeOfDay">
                             <li class="list-group-item  flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                Morning
+                                <input class="form-check-input me-1" type="checkbox" id="cb31" value="Morning" aria-label="...">
+                                <label for = "cb1">Morning</label>
                             </li>
                             <li class="list-group-item flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                Midday
+                                <input class="form-check-input me-1" type="checkbox" id="cb32" value="Midday" aria-label="...">
+                                <label for = "cb2">Midday</label>
                             </li>
                             <li class="list-group-item  flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                Afternoon
+                                <input class="form-check-input me-1" type="checkbox" id="cb33" value="Afternoon" aria-label="...">
+                                <label for = "cb2">Afternoon</label>
                             </li>
                             <li class="list-group-item flex-fill border-white">
-                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-                                Night
+                                <input class="form-check-input me-1" type="checkbox" id="cb34" value="Night" aria-label="...">
+                                <label for = "cb2">Night</label>
                             </li>
                         </ul>
 
@@ -213,8 +213,8 @@
     <!-- Generalized, page-specific javaScript -->
     <script src="./assets/js/script.js"></script>
     <!-- Temporarily commented out 
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>
--->
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>-->
+    <script src="./logic.js"></script>
     
 
 </body>
