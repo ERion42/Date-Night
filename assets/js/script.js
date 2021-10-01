@@ -15,6 +15,7 @@ var drinkB = localStorage.getItem('drinkB')
 var randM = Math.floor(Math.random()*7)
 console.log(randM)
 function init(){
+
 	if(stayingB == "true"){
 		if((foodB == "true")&&(movieB == "true")){
 			return foodData(),movieData()
@@ -61,6 +62,22 @@ function init(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+function placeHolderDates(){
+	$('.accordianContent').each(function(){
+		$(this).children('h2').text(miscArray[1])
+	})
+	
+}
 
 
 

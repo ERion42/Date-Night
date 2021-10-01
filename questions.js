@@ -92,4 +92,3 @@ var foodQuestions = [
 ];
 
 
-var miscArray = ["Video Game Night","Do a Puzzle","Decorate for a Holiday","Indoor Camping","Be Artistic","Have a Dance Party","Spa at Home","Create a Photo Book"]
