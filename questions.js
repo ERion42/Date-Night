@@ -47,7 +47,7 @@ var movieQuestions = [
     },
     {
         title: "What is your go to on the TV?",
-        choices: ["Sports", "Reality TV", "Mystery/Crime", "Comedy", "Horror"],
+        choices: ["Fantasy", "Drama", "Mystery/Crime", "Comedy", "Horror"],
         result: "movie"
     }
 ];
@@ -86,7 +86,10 @@ var foodQuestions = [
     },
     {
         title: "Any dietary preferences",
-        choices: ["Meat","Vegetarian","gluten-free"],
+        choices: ["Meat","Vegetarian","gluten-free","No-Preference"],
         result: "food"
     }
 ];
+
+
+var miscArray = ["Video Game Night","Do a Puzzle","Decorate for a Holiday","Indoor Camping","Be Artistic","Have a Dance Party","Spa at Home","Create a Photo Book"]

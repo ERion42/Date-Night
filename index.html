@@ -15,24 +15,24 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
             <div class="container-fluid">
-              <!-- Not sure if this should be a link or not-->
+              <!-- Take us back to the home page -->
               <a class="navbar-brand" href="#">Date Night</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-        
-              <div class="collapse navbar-collapse" id="myNavBar">
-                <ul class="navbar-nav me-auto">
-                  <li class="nav-item">
+              <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"> -->
+                <!-- <span class="navbar-toggler-icon"></span> -->
+              <!-- </button> -->
+              <!-- <div class="collapse navbar-collapse" id="myNavBar"> -->
+                <!-- <ul class="navbar-nav me-auto"> -->
+                  <!-- <li class="nav-item"> -->
                     <!-- This link could be used to take us back to the main page -->
-                    <a class="nav-link active" aria-current="page" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-house-door-fill" viewBox="0 0 16 16">
-                            <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
-                          </svg>
-                    </a>
-                  </li>
-                  <li class="nav-item">
+                    <!-- <a class="nav-link active" aria-current="page" href="./index.html"> -->
+                        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-house-door-fill" viewBox="0 0 16 16"> -->
+                            <!-- <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/> -->
+                        <!-- </svg> -->
+                    <!-- </a> -->
+                  <!-- </li> -->
+                  <!-- <li class="nav-item"> -->
                     <!-- This link could be used to refresh data -->
+              <!--
                     <a class="nav-link" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
@@ -41,8 +41,10 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                      <!-- This is a contact-us link -->
-                      <a class="nav-link" href="#">
+              -->
+                    <!-- This is a contact-us link -->
+              <!--
+                     <a class="nav-link" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-envelope-open-fill" viewBox="0 0 16 16">
                             <path d="M8.941.435a2 2 0 0 0-1.882 0l-6 3.2A2 2 0 0 0 0 5.4v.313l6.709 3.933L8 8.928l1.291.717L16 5.715V5.4a2 2 0 0 0-1.059-1.765l-6-3.2zM16 6.873l-5.693 3.337L16 13.372v-6.5zm-.059 7.611L8 10.072.059 14.484A2 2 0 0 0 2 16h12a2 2 0 0 0 1.941-1.516zM0 13.373l5.693-3.163L0 6.873v6.5z"/>
                           </svg>
@@ -50,6 +52,7 @@
                   </li>
                 </ul>
               </div>
+              -->
             </div>
           </nav>
         <!-- Navbar -->
@@ -57,7 +60,7 @@
 
     <main>
         <!-- Jumbotron : This banner might stay throughout the application's pages, or it could be replaced by a banner image -->
-        <div class="p-5 text-center bg-light myJumbotron">
+        <div class="jumbo p-5 text-center bg-light myJumbotron hide">
             <h1 class="mb-3">Date Night Picker</h1>
             <h4 class="mb-3">Put Your Date In Our Hands</h4>
         </div>
@@ -73,8 +76,8 @@
                 <!-- This section explains the general premise of the application and how to use it -->
                 <div class="col-lg-6">
                     <h1 class="display-5 fw-bold lh-1 mb-3">Leave the Planning To Us</h1>
-                    <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
+                    <p class="lead">Dates can be difficult. You've got to choose where to go and what to eat and what to do. Maybe you're not terribly creative (that's okay) or are just feeling overwhelmed and need to hand the decision-making off to someone else (that's okay too!)</p>
+                    <p class="lead">That's where we come in! This Date Picker will ask you a short series of probing questions and curate a lovely evening for you!</p>
 
 
                     <!-- This button needs to set display:none for .landingSection and .myJumbotron  then set display:inline for checkboxSection-->
@@ -84,19 +87,29 @@
                 </div>
             </section>
 
+            </section>
+
+
+       
+
+
+
             <section class="checkBox row flex-lg-row-reverse align-items-center g-5 py-5 hide">
+                <h3 class="display-5 fw-bold lh-1 mb-3 text-center">Just a Few Quick Questions:</h3>
+                <!-- DatePicker for Date -->
+                <label for="dateOfDate"><h3 class="text-center">On what date will your date take place?</h3></label>
+                <div class="input-group">
+                    <span class="input-group-text">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="var(--dark)" class="bi bi-calendar-date-fill" viewBox="0 0 16 16">
+                            <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zm5.402 9.746c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2z"/>
+                            <path d="M16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm-2.89-5.435v5.332H5.77V8.079h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z"/>
+                          </svg>
+                    </span>
+                    <input data-datepicker="" class="form-control" id="dateOfDate" type="text" placeholder="dd/mm/yyyy" required>
+                </div>
+
                 <!-- Checkbox Section -->
                 <div class="col-lg-12 parameters">
-                    <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Just a Few Quick Questions:</h1>
-                    <p class="text-center">We need to know the broad strokes of what you're looking for in a date. Please check any of the following boxes so we can help narrow down the options for your exciting outing!</p>
-                    <form>
-                        <div class="mb-3">
-                          <label for="address" class="form-label">Address or city</label>
-                          <input type="address" class="form-control" id="address">
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                          <div id='addressEncoded'></div>
-                        </div>
-                    </form>
                     <section id="checkboxQuestions">
                         <ul class="list-group list-group-horizontal text-center eventsCheckbox">
                             <li class="list-group-item  flex-fill border-white">
@@ -187,9 +200,11 @@
                     <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Almost Done!</h1>
                     <p class="text-center">We just need to ask you a few specific questions to really fine-tune your dating experience!</p>
                 </div>
-                <section class="col-lg-12">
-                    <h3 class="text-center" id="questionTitle"></h3>
-                    <div class= "justify-content-md-center" id="answers"></div>
+                <section class="col-lg-12 align-items-c">
+                    <h3 id="questionTitle"></h3>
+                    <div class="text-center" style="margin-bottom: 50px;">
+                        <div style="margin-left: 15%;margin-right: 15%;" id="answers"></div>
+                    </div>
                 </section>
             </section>
 
@@ -204,7 +219,7 @@
     </main>
         
     <!-- Need a footer Section -->    
-        
+
 
 
     
@@ -223,9 +238,8 @@
     <script src="questions.js"></script>
     <!-- Script used for question logic -->
     <script src="logic.js"></script>
-    <!-- Generalized, page-specific javaScript -->
-    <script src="./assets/js/script.js"></script> 
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&libraries=places&callback=initMap"></script>
+    <!-- Temporarily commented out 
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>-->
     
 
 </body>

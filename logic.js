@@ -1,6 +1,7 @@
 $('.btnBegin').on('click',function(){
     $('.firstPage').toggleClass('landingSection')
     $('.checkBox').toggleClass('checkboxSection')
+    $('.jumbo').toggleClass('myJumbotron')
 })
 
 
@@ -111,9 +112,7 @@ function displayQuestions (){
         var count = index+1;
         if (index+1 > questions.length){
             $('.questionsS').toggleClass('hide')
-
-            // Results();
-            testing()
+            Results()
         } else {
         var questionName = firstQuestion.title;
         questionsTitle.append(questionName);
@@ -144,10 +143,6 @@ function displayQuestions (){
         }
         // Displaying it all on the page.
     }
-    
-    var Results = function (){
-        JSON.parse(localStorage.getItem("finalAnswers"));
-    }
 
 active = []
 foodZ = []
@@ -157,7 +152,7 @@ movieX = []
 drinkz = []
 eventq = []
 
-function testing(){
+function Results(){
     var selections = JSON.parse(localStorage.getItem("finalAnswers"));
     console.log(selections)
     for (i=0; i < selections.length; i++){
@@ -198,5 +193,6 @@ function testing(){
     localStorage.setItem("foodB",foodB)
     localStorage.setItem("eventB",eventB)
     localStorage.setItem("drinkB",drinkB)
+    console.log('hello')
     document.location.replace('./results.html')
 }
