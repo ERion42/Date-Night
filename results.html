@@ -14,13 +14,14 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
             <div class="container-fluid">
-              <!-- Not sure if this should be a link or not-->
+              <!-- Take us back to the home page-->
               <a class="navbar-brand" href="#">Date Night</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
         
-              <div class="collapse navbar-collapse" id="myNavBar">
+              
+              <div class="collapse navbar-collapse" id="myNavBar" id="homePage">
                 <ul class="navbar-nav me-auto">
                   <li class="nav-item">
                     <!-- This link could be used to take us back to the main page -->
@@ -32,6 +33,7 @@
                   </li>
                   <li class="nav-item">
                     <!-- This link could be used to refresh data -->
+              <!--
                     <a class="nav-link" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
@@ -41,12 +43,34 @@
                   </li>
                 </ul>
               </div>
+              -->
             </div>
           </nav>
         <!-- Navbar -->
     </header>
 
     <main>
+
+        <!-- Location Search -->
+        <form>
+          <div class="mb-3 text-center">
+            <label for="address" class="form-label" style="margin-top: 50px;" id="zipCode"><h2>Enter the zip code in which your date will take place:</h2></label>
+            <p class="lead">Please and thank you.</p>
+            <input type="address" class="form-control w-75" id="address" style="margin-left: 12.5%; margin-right: 12.5%;">
+            <button type="submit" class="btn btn-primary" style="margin: 15px 0 15px 0;">Submit</button>
+            <div id='addressEncoded'></div>
+          </div>
+        </form>
+
+        <!-- Results Presentation -->
+        <div class="p-5 mb-4 bg-light rounded-3">
+          <div class="container-fluid py-5">
+            <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+            <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+            <button class="btn btn-primary btn-lg" type="button">Example button</button>
+          </div>
+        </div>
+
         <!-- Accordion Begins -->
         <section class="accordion" id="userInputAccordion">
             <section class="accordion-item">
@@ -57,7 +81,21 @@
               </h2>
               <div id="userInputAccordion-collapseOne" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingOne">
                 <div class="accordion-body">
-                    
+                    <!-- Text and Results Go Here-->
+                    <!-- Carousel for Results -->
+                    <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
+                      <!-- Image... currently a stock placeholder image until we find something better -->
+                      <div class="col-10 col-sm-8 col-lg-6">
+                          <img src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
+                      </div>
+                      <!-- This section explains the general premise of the application and how to use it -->
+                      <div class="col-lg-6">
+                          <h2 class="display-5 fw-bold lh-1 mb-3">So this would be option one:</h2>
+                          <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
+                          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
+                          <p class="lead">Ideally, there would be an accordion here to cycle through other sections like this.</p>
+                      </div>
+                  </section>
                 </div>
               </div>
             </section>
@@ -69,7 +107,21 @@
               </h2>
               <div id="userInputAccordion-collapseTwo" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingTwo">
                 <div class="accordion-body">
-                  
+                    <!-- Text and Results Go Here-->
+                    <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
+                      <!-- Image... currently a stock placeholder image until we find something better -->
+                      <!-- This section explains the general premise of the application and how to use it -->
+                      <div class="col-lg-6">
+                          <h2 class="display-5 fw-bold lh-1 mb-3">So this would be option two:</h2>
+                          <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
+                          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
+                          <p class="lead">Ideally, there would be an accordion here to cycle through other sections like this.</p>
+                      </div>
+                      <div class="col-10 col-sm-8 col-lg-6">
+                        <img src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
+                      </div>
+                    </section>
+
                 </div>
               </div>
             </section>
@@ -81,7 +133,21 @@
               </h2>
               <div id="userInputAccordion-collapseThree" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingThree">
                 <div class="accordion-body">
-                  
+                    <!-- Text and Results Go Here-->
+                    <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
+                      <!-- Image... currently a stock placeholder image until we find something better -->
+                      <div class="col-10 col-sm-8 col-lg-6">
+                          <img src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
+                      </div>
+                      <!-- This section explains the general premise of the application and how to use it -->
+                      <div class="col-lg-6">
+                          <h2 class="display-5 fw-bold lh-1 mb-3">So this would be option three:</h2>
+                          <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
+                          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
+                          <p class="lead">Ideally, there would be an accordion here to cycle through other sections like this.</p>
+                      </div>
+                    </section>                    
+                    
                 </div>
               </div>
             </section>
@@ -91,7 +157,9 @@
     </main>
         
     <!-- Need a footer Section -->    
-        
+    <footer class="text-left p-4 sticky-bottom" style="background-color:var(--dark);color:var(--lighter)">
+      <a href="">About</a>
+    </footer>        
 
 
     
