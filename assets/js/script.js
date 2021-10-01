@@ -12,7 +12,13 @@ var movieB = localStorage.getItem('movieB')
 var foodB = localStorage.getItem('foodB')
 var eventB = localStorage.getItem('eventB')
 var drinkB = localStorage.getItem('drinkB')
-
+var service;
+var genreCode;
+function init(){
+	if(stayingB == true){
+		
+	}
+}
 
 
 
@@ -45,16 +51,42 @@ var drinkB = localStorage.getItem('drinkB')
 
 
 function movieData(){
-
+	console.log(movieA)
+	var serviceU = (movieA[0])
+	var service = serviceU.toLowerCase()
+	console.log(service)
+	if (movieA[1] == "Mystery/Crime"){
+		var genreCode = '80'
+		movieRequest(service,genreCode)
+	} 
+	if (movieA[1] == "Comedy"){
+		var genreCode = '35'
+		movieRequest(service, genreCode)
+	}
+	if (movieA[1] == "Horror"){
+		console.log('boo')
+		var genreCode = '27'
+		movieRequest(service, genreCode)
+	}
+	if (movieA[1] == "Fantasy"){
+		var genreCode = '14'
+		movieRequest(service, genreCode)
+	}
+	if (movieA[1]=="Drama"){
+		var genreCode = '18'
+		movieRequest(service, genreCode)
+	}
 }
 
 function foodData(){
-
+	var tags = foodA[0].toLowerCase()+","+ foodA[1].toLowerCase()
+	console.log(tags)
+	foodRequest(tags)
 }
 
 
 
-function foodRequest (){
+function foodRequest (tags){
 fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
 	"method": "GET",
 	"headers": {
@@ -65,8 +97,10 @@ fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/rando
 .then(response => response.json())
 .then(data => console.log(data));
 }
+var service;
+var genreCode;
+function movieRequest (service,genreCode){
 
-function movieRequest (){
 fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service="+service+"&type=movie&genre="+ genreCode, {
 	"method": "GET",
 	"headers": {
@@ -78,3 +112,4 @@ fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
 .then(data => console.log(data))
 // 4: musical, 12: Adventure, 14: fantasy, 18: Drama, 27: Horror, 28: Action, 35: Comedy, 80: Crime, 878: Science fiction, 10749: Romance.
 }
+foodData()
