@@ -15,24 +15,11 @@ main {
   display: none;
 }
 
-<<<<<<< HEAD
 /* display:block by default, display:none after "Begin" button is pushed */
 .myJumbotron {
   background-color: var(--light) !important;
   color: var(--dark);
   display: block;
-=======
-.mainPage {
-    padding-top: 0px !important;
-}
-
-/* display:block by default, display:none after "Begin" button is pushed */
-.myJumbotron {
-    background-color: var(--light) !important;
-    color: var(--dark);
-    display: block;
-    padding: 0px;
->>>>>>> 10181ac8c8fdba221282c09e781da629969b457a
 }
 
 .bg-dark {
@@ -40,13 +27,9 @@ main {
   background: var(--dark) !important;
 }
 
-<<<<<<< HEAD
 .btnBegin {
   background: var(--dark) !important;
 }
-=======
-
->>>>>>> 10181ac8c8fdba221282c09e781da629969b457a
 
 .questionsContainer {
   display: grid;
@@ -58,32 +41,13 @@ main {
 
 /* display:flex by default, display:none after "Begin" button is pushed */
 .landingSection {
-<<<<<<< HEAD
   margin-top: 50px;
   display: flex;
-=======
-    margin-top: 0px;
-    display: flex;
->>>>>>> 10181ac8c8fdba221282c09e781da629969b457a
 }
 
 /* display:none by default, display:flex after "Begin" button is pushed, display:none after "Continue" button is pushed */
 .checkboxSection {
-<<<<<<< HEAD
   display: flex;
-=======
-    display: flex;
-    padding-top: 0;
-}
-
-
-.btnBegin {
-    background: var(--dark) !important;
-}
-
-.btnDatePickerSubmit {
-    background: var(--dark) !important;
->>>>>>> 10181ac8c8fdba221282c09e781da629969b457a
 }
 
 .btnContinue {
@@ -119,11 +83,5 @@ main {
 
 /* Display:none by default, but under right circumstances display: '' */
 #addressSection {
-<<<<<<< HEAD
   display: '';
 }
-=======
-    display: '';
-}
-
->>>>>>> 10181ac8c8fdba221282c09e781da629969b457a
