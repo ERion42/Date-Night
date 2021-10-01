@@ -13,7 +13,7 @@ var foodB = localStorage.getItem('foodB')
 var eventB = localStorage.getItem('eventB')
 var drinkB = localStorage.getItem('drinkB')
 function init(){
-	if(stayingB){
+	if(stayingB == "true"){
 		if((foodB == "true")&&(movieB == "true")){
 			return foodData(),movieData()
 		}
@@ -25,7 +25,9 @@ function init(){
 			console.log('try harder')
 		}
 		
-	} else if (goingB){
+	} else if (goingB == "true"){
+		
+		$('.locationSearch').toggleClass('hide')
 		console.log('bye')
 	}
 }
