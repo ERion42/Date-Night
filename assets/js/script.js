@@ -12,6 +12,8 @@ var movieB = localStorage.getItem('movieB')
 var foodB = localStorage.getItem('foodB')
 var eventB = localStorage.getItem('eventB')
 var drinkB = localStorage.getItem('drinkB')
+var randM = Math.floor(Math.random()*7)
+console.log(randM)
 function init(){
 	if(stayingB == "true"){
 		if((foodB == "true")&&(movieB == "true")){
@@ -110,8 +112,25 @@ function foodData(){
 	}
 }
 
-
-
+function writeFood(f){
+	console.log(f.recipes[0].title)
+	console.log(f.recipes[0].image)
+	console.log(f.recipes[0].readyInMinutes)
+	$('#option1I').attr('src', f.recipes[0].image)
+	$('#option1H').text(f.recipes[0].title)
+	$('#option1P1').text("Ready in "+f.recipes[0].readyInMinutes+" minutes")
+	$('#option1P2').text("Makes " + f.recipes[0].servings+ " servings")
+	$('#option1P3').empty()
+	$('#option1A').text("Here is a link to the recipe").attr('href',f.recipes[0].sourceUrl)
+}
+function writeMovie(m){
+	console.log(m.results[randM].title)
+	$('#option2H').text(m.results[randM].title)
+	$('#option2I').attr('src',m.results[randM].posterURLs.original)
+	$('#option2P1').text(m.results[randM].runtime+" minutes")
+	$('#option2P2').empty()
+	$('#option2P3').empty()
+}
 
 function foodRequest (tags){
 fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
@@ -122,7 +141,7 @@ fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/rando
 	}
 })
 .then(response => response.json())
-.then(data => console.log(data));
+.then(data => writeFood(data));
 }
 
 function movieRequest (service,genreCode){
@@ -135,7 +154,7 @@ fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
 	}
 })
 .then(response => response.json())
-.then(data => console.log(data))
+.then(data => writeMovie(data))
 // 4: musical, 12: Adventure, 14: fantasy, 18: Drama, 27: Horror, 28: Action, 35: Comedy, 80: Crime, 878: Science fiction, 10749: Romance.
 }
 init()
