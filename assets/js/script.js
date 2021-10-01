@@ -100,6 +100,20 @@ var searchNearby = function(){
 };
 
 // getPlaces();
+var generalA = JSON.parse(localStorage.getItem("general"))
+var foodA = JSON.parse(localStorage.getItem("food"))
+var activeA = JSON.parse(localStorage.getItem("active"))
+var goingA = JSON.parse(localStorage.getItem("goingO"))
+var eventA = JSON.parse(localStorage.getItem("event"))
+var drinkA = JSON.parse(localStorage.getItem("drink"))
+var movieA = JSON.parse(localStorage.getItem("movie"))
+var stayingB = localStorage.getItem('stayingB')
+var goingB = localStorage.getItem('goingB')
+var activeB = localStorage.getItem('activeB')
+var movieB = localStorage.getItem('movieB')
+var foodB = localStorage.getItem('foodB')
+var eventB = localStorage.getItem('eventB')
+var drinkB = localStorage.getItem('drinkB')
 
 
 
@@ -120,7 +134,28 @@ var searchNearby = function(){
 
 
 
-var tags = "meat,appetizer"
+
+
+
+
+
+
+
+
+
+
+
+
+function movieData(){
+
+}
+
+function foodData(){
+
+}
+
+
+
 function foodRequest (){
 fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
 	"method": "GET",

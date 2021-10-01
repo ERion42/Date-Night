@@ -1,6 +1,5 @@
-// var timeOfYear = moment ()
-// var seasons = timeOfYear.format("MMMM");
-
+var timeOfYear = moment ()
+var seasons = timeOfYear.format("MMMM");
 var generalQuestions = [
     {
         title: "What is your budget?",
@@ -36,7 +35,7 @@ var activityQuestions = [
     {
         title: "What is your favorite out of the following:",
         choices: ["Art", "Adventure", "Fitness", "Logic"],
-        result: "activity"
+        result: "activity",
     }
 ];
 
@@ -44,7 +43,7 @@ var movieQuestions = [
     {
         title: "Which streaming service do you prefer",
         choices: ["Netflix", "Prime", "Disney","Hbo", "Hulu"],
-        result: "movie"
+        result: "movie",
     },
     {
         title: "What is your go to on the TV?",
