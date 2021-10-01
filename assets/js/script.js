@@ -124,8 +124,7 @@ fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/rando
 .then(response => response.json())
 .then(data => console.log(data));
 }
-var service;
-var genreCode;
+
 function movieRequest (service,genreCode){
 
 fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service="+service+"&type=movie&genre="+ genreCode, {
