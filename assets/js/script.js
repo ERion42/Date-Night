@@ -1,3 +1,24 @@
+var generalA = JSON.parse(localStorage.getItem("general"))
+var foodA = JSON.parse(localStorage.getItem("food"))
+var activeA = JSON.parse(localStorage.getItem("active"))
+var goingA = JSON.parse(localStorage.getItem("goingO"))
+var eventA = JSON.parse(localStorage.getItem("event"))
+var drinkA = JSON.parse(localStorage.getItem("drink"))
+var movieA = JSON.parse(localStorage.getItem("movie"))
+var stayingB = localStorage.getItem('stayingB')
+var goingB = localStorage.getItem('goingB')
+var activeB = localStorage.getItem('activeB')
+var movieB = localStorage.getItem('movieB')
+var foodB = localStorage.getItem('foodB')
+var eventB = localStorage.getItem('eventB')
+var drinkB = localStorage.getItem('drinkB')
+var service;
+var genreCode;
+function init(){
+	if(stayingB == true){
+		
+	}
+}
 
 
 
@@ -18,8 +39,54 @@
 
 
 
-var tags = "meat,appetizer"
-function foodRequest (){
+
+
+
+
+
+
+
+
+
+
+
+function movieData(){
+	console.log(movieA)
+	var serviceU = (movieA[0])
+	var service = serviceU.toLowerCase()
+	console.log(service)
+	if (movieA[1] == "Mystery/Crime"){
+		var genreCode = '80'
+		movieRequest(service,genreCode)
+	} 
+	if (movieA[1] == "Comedy"){
+		var genreCode = '35'
+		movieRequest(service, genreCode)
+	}
+	if (movieA[1] == "Horror"){
+		console.log('boo')
+		var genreCode = '27'
+		movieRequest(service, genreCode)
+	}
+	if (movieA[1] == "Fantasy"){
+		var genreCode = '14'
+		movieRequest(service, genreCode)
+	}
+	if (movieA[1]=="Drama"){
+		var genreCode = '18'
+		movieRequest(service, genreCode)
+	}
+}
+
+function foodData(){
+	var tags = foodA[0].toLowerCase()+","+ foodA[1].toLowerCase()
+	console.log(tags)
+	foodRequest(tags)
+}
+
+
+
+function foodRequest (tags){
 fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
 	"method": "GET",
 	"headers": {
@@ -30,8 +97,10 @@ fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/rando
 .then(response => response.json())
 .then(data => console.log(data));
 }
+var service;
+var genreCode;
+function movieRequest (service,genreCode){
 
-function movieRequest (){
 fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service="+service+"&type=movie&genre="+ genreCode, {
 	"method": "GET",
 	"headers": {
