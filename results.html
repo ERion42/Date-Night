@@ -52,7 +52,7 @@
     <main>
 
         <!-- Location Search -->
-        <form>
+        <form class="locationSearch hide">
           <div class="mb-3 text-center">
             <label for="address" class="form-label" style="margin-top: 50px;" id="zipCode"><h2>Enter the zip code in which your date will take place:</h2></label>
             <p class="lead">Please and thank you.</p>
@@ -86,14 +86,15 @@
                     <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
                       <!-- Image... currently a stock placeholder image until we find something better -->
                       <div class="col-10 col-sm-8 col-lg-6">
-                          <img src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
+                          <img id="option1I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
                       </div>
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6">
-                          <h2 class="display-5 fw-bold lh-1 mb-3">So this would be option one:</h2>
-                          <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
-                          <p class="lead">Ideally, there would be an accordion here to cycle through other sections like this.</p>
+                          <h2 class="display-5 fw-bold lh-1 mb-3" id="option1H">So this would be option one:</h2>
+                          <p class="lead" id="option1P1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
+                          <p class="lead" id="option1P2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
+                          <p class="lead" id="option1P3">Ideally, there would be an accordion here to cycle through other sections like this.</p>
+                          <a id="option1A" href="" target="_blank"></a>
                       </div>
                   </section>
                 </div>
@@ -112,13 +113,13 @@
                       <!-- Image... currently a stock placeholder image until we find something better -->
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6">
-                          <h2 class="display-5 fw-bold lh-1 mb-3">So this would be option two:</h2>
-                          <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
-                          <p class="lead">Ideally, there would be an accordion here to cycle through other sections like this.</p>
+                          <h2 id="option2H" class="display-5 fw-bold lh-1 mb-3">So this would be option two:</h2>
+                          <p id="option2P1" class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
+                          <p id="option2P2" class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
+                          <p id="option2P3" class="lead">Ideally, there would be an accordion here to cycle through other sections like this.</p>
                       </div>
                       <div class="col-10 col-sm-8 col-lg-6">
-                        <img src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
+                        <img id="option2I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
                       </div>
                     </section>
 
@@ -174,10 +175,9 @@
     ></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <!-- Script used for questions -->
-    <script src="./questions.js"></script>
     <!-- Generalized, page-specific javaScript -->
     <script src="./assets/js/script.js"></script>
+    <script src="./questions.js"></script>
     <!-- Temporarily commented out 
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>
 -->
