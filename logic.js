@@ -198,4 +198,5 @@ function testing(){
     localStorage.setItem("foodB",foodB)
     localStorage.setItem("eventB",eventB)
     localStorage.setItem("drinkB",drinkB)
+    document.location.replace('./results.html')
 }
