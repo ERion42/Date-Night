@@ -15,12 +15,16 @@ main {
     display:none;
 }
 
+.mainPage {
+    padding-top: 0px !important;
+}
 
 /* display:block by default, display:none after "Begin" button is pushed */
 .myJumbotron {
     background-color: var(--light) !important;
     color: var(--dark);
     display: block;
+    padding: 0px;
 }
 
 .bg-dark {
@@ -29,9 +33,6 @@ main {
 }
 
 
-.btnBegin {
-    background: var(--dark) !important;
-}
 
 .questionsContainer {
     display: grid;
@@ -44,13 +45,23 @@ main {
 
 /* display:flex by default, display:none after "Begin" button is pushed */
 .landingSection {
-    margin-top: 50px;
+    margin-top: 0px;
     display: flex;
 }
 
 /* display:none by default, display:flex after "Begin" button is pushed, display:none after "Continue" button is pushed */
 .checkboxSection {
     display: flex;
+    padding-top: 0;
+}
+
+
+.btnBegin {
+    background: var(--dark) !important;
+}
+
+.btnDatePickerSubmit {
+    background: var(--dark) !important;
 }
 
 .btnContinue {
@@ -84,6 +95,7 @@ main {
     background: var(--dark) !important;
 }
 
+/* Display:none by default, but under right circumstances display: '' */
 #addressSection {
     display: '';
 }

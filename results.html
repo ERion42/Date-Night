@@ -14,17 +14,18 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
             <div class="container-fluid">
-              <!-- Not sure if this should be a link or not-->
+              <!-- Take us back to the home page-->
               <a class="navbar-brand" href="#">Date Night</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
         
-              <div class="collapse navbar-collapse" id="myNavBar">
+              
+              <div class="collapse navbar-collapse" id="myNavBar" id="homePage">
                 <ul class="navbar-nav me-auto">
                   <li class="nav-item">
                     <!-- This link could be used to take us back to the main page -->
-                    <a class="nav-link active" aria-current="page" href="#">
+                    <a class="nav-link active" aria-current="page" href="./index.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-house-door-fill" viewBox="0 0 16 16">
                             <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
                           </svg>
@@ -32,6 +33,7 @@
                   </li>
                   <li class="nav-item">
                     <!-- This link could be used to refresh data -->
+              <!--
                     <a class="nav-link" href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
@@ -41,6 +43,7 @@
                   </li>
                 </ul>
               </div>
+              -->
             </div>
           </nav>
         <!-- Navbar -->
@@ -51,7 +54,7 @@
         <!-- Location Search -->
         <form>
           <div class="mb-3 text-center">
-            <label for="address" class="form-label" style="margin-top: 50px;"><h2>Enter the zip code in which your date will take place:</h2></label>
+            <label for="address" class="form-label" style="margin-top: 50px;" id="zipCode"><h2>Enter the zip code in which your date will take place:</h2></label>
             <p class="lead">Please and thank you.</p>
             <input type="address" class="form-control w-75" id="address" style="margin-left: 12.5%; margin-right: 12.5%;">
             <button type="submit" class="btn btn-primary" style="margin: 15px 0 15px 0;">Submit</button>
@@ -154,7 +157,9 @@
     </main>
         
     <!-- Need a footer Section -->    
-        
+    <footer class="text-left p-4 sticky-bottom" style="background-color:var(--dark);color:var(--lighter)">
+      <a href="">About</a>
+    </footer>        
 
 
     
