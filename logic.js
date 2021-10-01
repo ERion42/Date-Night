@@ -1,17 +1,20 @@
 $('.btnBegin').on('click',function(){
     $('.firstPage').toggleClass('landingSection')
     $('.checkBox').toggleClass('checkboxSection')
+    $('.jumbo').toggleClass('myJumbotron')
 })
 
 
 
 
-
-
-
-
-
-var questions = [];
+var stayingB = false
+var goingB = false
+var activeB = false
+var movieB = false
+var foodB = false
+var eventB = false
+var drinkB = false
+var questions = generalQuestions;
 var submit = document.querySelector("#checkboxSubmit");
 
 // Variables set for each event checkbox.
@@ -24,8 +27,8 @@ var events = document.getElementById("cb5");
 
 // Variables set for the go in or go out checkboxes.
 
-var stayIn = document.getElementById("cb21");
-var goOut = document.getElementById("cb22");
+var stayIn = document.getElementById("cb22");
+var goOut = document.getElementById("cb21");
 
 // Variables set for the time of day the date will take place.
 
@@ -38,27 +41,36 @@ var night = document.getElementById("cb34");
 var pushArray = function() {
 $('.checkBox').toggleClass('checkboxSection')
 $('.questionsS').toggleClass('hide')
+    if (stayIn.checked ==true){
+        stayingB = true
+    }
     if (activity.checked==true) {
     questions.push(...activityQuestions);
+        activeB = true
     }
     
     if (food.checked==true) {
         questions.push(...foodQuestions);
+        foodB = true
     }
     
     if (movie.checked==true) {
         questions.push(...movieQuestions);
+        movieB = true
     }
     
     if (drinks.checked==true) {
         questions.push(...drinksQuestions);
+        drinkB = true
     }
     
     if (events.checked==true) {
         questions.push(...eventQuestions);
+        eventB = true
     }
     
     if (goOut.checked==true) {
+        goingB = true;
         questions.push(...goingOut);
     };
     console.log(questions);
@@ -141,7 +153,7 @@ function displayQuestions (){
 active = []
 foodZ = []
 general = []
-going = []
+goingO = []
 movieX = []
 drinkz = []
 eventq = []
@@ -155,7 +167,7 @@ function testing(){
         }
         
         if (selections[i].result == "goingOut"){
-            going.push(selections[i].final)
+            goingO.push(selections[i].final)
         }
         if (selections[i].result == "activity"){
             active.push(selections[i].final)
@@ -173,11 +185,18 @@ function testing(){
             foodZ.push(selections[i].final)
         }
     }
-    localStorage.setItem("general" , general)
-    localStorage.setItem("food" , foodZ)
-    localStorage.setItem("active" , active);
-    localStorage.setItem("goingO" , going)
-    localStorage.setItem("event" , eventq)
-    localStorage.setItem("drink" , drinkz)
-    localStorage.setItem("movie" , movieX)
+    localStorage.setItem("general" , JSON.stringify(general))
+    localStorage.setItem("food" , JSON.stringify(foodZ))
+    localStorage.setItem("active" , JSON.stringify(active))
+    localStorage.setItem("goingO" , JSON.stringify(goingO))
+    localStorage.setItem("event" , JSON.stringify(eventq))
+    localStorage.setItem("drink" , JSON.stringify(drinkz))
+    localStorage.setItem("movie" , JSON.stringify(movieX))
+    localStorage.setItem("stayingB",stayingB)
+    localStorage.setItem("goingB",goingB)
+    localStorage.setItem("activeB",activeB)
+    localStorage.setItem("movieB",movieB)
+    localStorage.setItem("foodB",foodB)
+    localStorage.setItem("eventB",eventB)
+    localStorage.setItem("drinkB",drinkB)
 }
