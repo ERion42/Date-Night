@@ -112,4 +112,3 @@ fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
 .then(data => console.log(data))
 // 4: musical, 12: Adventure, 14: fantasy, 18: Drama, 27: Horror, 28: Action, 35: Comedy, 80: Crime, 878: Science fiction, 10749: Romance.
 }
-foodData()
