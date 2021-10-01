@@ -88,6 +88,14 @@
                 <div class="col-lg-12 parameters">
                     <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Just a Few Quick Questions:</h1>
                     <p class="text-center">We need to know the broad strokes of what you're looking for in a date. Please check any of the following boxes so we can help narrow down the options for your exciting outing!</p>
+                    <form>
+                        <div class="mb-3">
+                          <label for="address" class="form-label">Address or city</label>
+                          <input type="address" class="form-control" id="address">
+                          <button type="submit" class="btn btn-primary">Submit</button>
+                          <div id='addressEncoded'></div>
+                        </div>
+                    </form>
                     <section id="checkboxQuestions">
                         <ul class="list-group list-group-horizontal text-center eventsCheckbox">
                             <li class="list-group-item  flex-fill border-white">
@@ -215,9 +223,8 @@
     <!-- Script used for question logic -->
     <script src="logic.js"></script>
     <!-- Generalized, page-specific javaScript -->
-    <script src="./assets/js/script.js"></script>
-    <!-- Temporarily commented out 
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>-->
+    <script src="./assets/js/script.js"></script> 
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&libraries=places&callback=initMap"></script>
     
 
 </body>
