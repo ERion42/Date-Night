@@ -1,26 +1,11 @@
-// Place search test URL
-// ';
-
-//Text Search Test URL
-// 'https://enigmatic-citadel-24557.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?location=' + latlng + '&radius=15000&query=' + addressEncoded + '&inputtype=textquery&key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578';
-
-// Place search test URL
-// 'https://enigmatic-citadel-24557.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?&fields=name%20type&locationbias=circle:15000@' + latlng + '&inputtype=textquery&key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578';
-
-
 //Declaring global variables for the Google Maps API
 var mapsAPIKeySuffix = '&key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578';
 var mapsAPIUrlPrefix = 'https://maps.googleapis.com/maps/api/';
 var hostUrl = 'https://enigmatic-citadel-24557.herokuapp.com/';
-// fetch(hostUrl + YOUR_URL + parameters
 var lat;
 var lng;
 var latlng;
 var geocodeUrl;
-var spaceEncode = '%20';
-var commaEncode = '%2C';
-var allTypes = '&amusement_park%20campground%20park%20%20zoo%20aquarium%20art_gallery%20bowling_alley%20casino%20library%20museum%20tourist_attraction%20bar%20casino%20night_club%20bakery%20cafe%20restaurant%20movie_theater%20';
-
 
 //This function takes the address entered into the form and encodes it so it can be appended to the URL. It then generates the geocode URL which returns a results object that contains the location data (latitude and longitude). The lat and lng are set which allows the places nearby search to be run. 
 var geocodeAddress = function(address){
@@ -29,20 +14,15 @@ var geocodeAddress = function(address){
     var addressEncoded = addressArr.join('%20');
     localStorage.setItem('addressURLInput', addressEncoded);
     geocodeUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + addressEncoded + mapsAPIKeySuffix;
-    console.log(geocodeUrl);
 
+    //Fetch user location information and encode it for the URL
    $.ajax(geocodeUrl).then(function(results){
-       console.log(results);
        lat = results.results[0].geometry.location.lat;
        lng = results.results[0].geometry.location.lng;
-       console.log(lat);
-       console.log(lng);
         var latlng = lat + '%2C' + lng;
         localStorage.setItem('location', latlng);
    }).then(searchMultiple());
-
 };
-https://enigmatic-citadel-24557.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbySearch/json?&location=33.7489954.-84.3879824&radius=15000&key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578
 
 //Event listener for the address form submit button. Calls geocodeAddress function.
 $('form').submit(function(event){
@@ -52,21 +32,17 @@ $('form').submit(function(event){
     console.log(address);
 });
 
-//Empty initMap function to stop getting errors on page load because of the callback in the googleapis link in the html
-var initMap = function (){
-    console.log('initMap callback');
-};
-
-
+//This function creates an array and adds search terms based on user input. It then calls the recrsiveFetch function to fetch the maps results (up to 20 results for each) of each location type which saves the results into local storage. Then it loops through each location type in the dateOptions array and calls the parseMapsData function to get 3 random options for each one.
 var searchMultiple = function(){
     var dateOptions = [];
+	
     var goingOut = localStorage.getItem('goingB');
-    console.log(goingOut);
+	var i =0;
     var searchBars = localStorage.getItem('drinkB');
     var searchTheaters = localStorage.getItem('movieB');
     var searchRestaurants = localStorage.getItem('foodB');
     var searchActive = localStorage.getItem('activeB'); 
-    //Checks boolean value of user inputs and pushes search criteria into dateOptions array if true
+    //Checks boolean value of user inputs and pushes search criteria into dateOptions array if true. Calls the fetch and parse functions only if true.
     if(goingOut === 'true'){
             if(searchBars === 'true'){
                 dateOptions.push('bar');
@@ -88,28 +64,64 @@ var searchMultiple = function(){
                 dateOptions.push('bowling_alley');
             }
         console.log(dateOptions);
-    }
-    //pulls user location info and an encoded address from localStorage to put into the search URL 
-    latlng = localStorage.getItem('location');
-    var addressEncoded = localStorage.getItem('addressInputEncoded');
     
-    //loops through dataOptions array and makes a fetch for each index
-    for (var i = 0; i < dateOptions.length; i++) {
-        var query = dateOptions[i];
+    	//pulls user location info from localStorage to put into the search URL 
+    	latlng = localStorage.getItem('location');
 
-        var mapsAPIUrl = 'https://enigmatic-citadel-24557.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?location=' + latlng + '&radius=15000&query=' + query + '&key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578';
+		//Fetch maps data
+		recrsiveFetch(dateOptions, i, latlng)
 
-        console.log(mapsAPIUrl);
-        fetch(mapsAPIUrl).then(function(response){
-            if(response.ok){
-                response.json().then(function(data){
-                console.log(data);
-                
-                });
-            };
-        })   
-    }
+		//loop through dateOptions array and calls parseMapsData for each index value
+		for (i=0; i<dateOptions.length; i++){
+			parseMapsData(dateOptions[i]);
+		}
+	}
 }
+
+//This function takes 3 parameters: the dateOptions array, an index variable i initialized to 0, and latlng. Each value in the dateOptions array will individually be input into the fetch URL as the search term and the result will be saved in localStorage with the search term as the key value. This is done with a recursive function because the fetch requests are asynchronus and with a for loop the loop completes before the fetches. The led to only the last result being saved in localStorage.
+function recrsiveFetch(dateOptions,i, latlng){
+
+	if(i<dateOptions.length){
+		var query = dateOptions[i];
+		var mapsAPIUrl = 'https://enigmatic-citadel-24557.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?location=' + latlng + '&radius=15000&query=' + query + '&key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578';
+	
+		console.log(mapsAPIUrl);
+		fetch(mapsAPIUrl).then(function(response){
+			if(response.ok){
+				response.json().then(function(data){
+				console.log(data);
+				localStorage.setItem(query, JSON.stringify(data))
+				});
+				i++;
+				recrsiveFetch(dateOptions, i, latlng);
+			};
+		}) 
+	}
+}
+
+//This function takes a parameter of the location type (e.g. bar, restaurant, etc.) and checks if it exists in local storage. If it exists it will loop through each of the results (which max out at 20) and pull 3 at random. Initially this was occasionally grabbing duplicates. To address this I used an if statement that checks the previous index value and the new index value defined in the loop. If the new value is equal to the old value the function calls itself recursively. This will repeat as many times as necessary to return novel values. Every time the function is called it will reinitialize the array to clear it so it will always return exactly three different results. 
+var previousIndex = 0;
+var index = 0;
+function parseMapsData(keyname){
+	if (localStorage.getItem(keyname)){
+		var arr = [];
+		for (var i=0; i <3; i++){
+			var restaurantData = JSON.parse(localStorage.getItem(keyname));
+			previousIndex = index;
+			index = Math.floor(Math.random() * restaurantData.results.length);
+			 
+			 if (previousIndex === index){
+				 return parseMapsData(keyname);
+			 }else{
+                arr.push(restaurantData.results[index])
+				var option = JSON.stringify(arr);
+				localStorage.setItem('keyword'+i, option);   
+			 }
+		}
+	}
+}
+
+
 
 var generalA = JSON.parse(localStorage.getItem("general"))
 var foodA = JSON.parse(localStorage.getItem("food"))
