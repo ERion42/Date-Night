@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> 
     <link rel="stylesheet" href="./assets/css/style.css">    
     <title>Date Nite</title>
 </head>
@@ -31,22 +32,9 @@
                           </svg>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <!-- This link could be used to refresh data -->
-              <!--
-                    <a class="nav-link" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
-                            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
-                          </svg>
-                    </a>
-                  </li>
                 </ul>
               </div>
-              -->
-            </div>
           </nav>
-        <!-- Navbar -->
     </header>
 
     <main>
@@ -71,7 +59,6 @@
               <p class="lead">Thank you for answering those questions! Below are the things we picked for you based on your answers. We hope you have a wonderful date!</p>
               <p class="lead">And if your date does not go well, you can always blame the app!</p>
             </div>
-
             <div class="col-10 col-sm-8 col-lg-6">
               <img src="./assets/img/man_in_brown_and_white_plaid_dress_shirt_holding_hands_with_woman_in_black_dress-scopio-7c075e68-f1e2-453d-a43d-7a23d5df7f94.jpg" class="d-block mx-lg-auto img-fluid mainPic" alt="Photo by  Andrii Omelnytskyi  on  Scopio">
             </div>
@@ -93,20 +80,16 @@
                 <div class="accordion-body">
                     <!-- Text and Results Go Here-->
                     <!-- Carousel for Results -->
-                    <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
-                      <!-- Image... currently a stock placeholder image until we find something better -->
-                      <div class="col-10 col-sm-8 col-lg-6">
-                          <img id="option1I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
-                      </div>
-                      <!-- This section explains the general premise of the application and how to use it -->
-                      <div class="col-lg-6">
-                          <h2 class="display-5 fw-bold lh-1 mb-3" id="option1H">So this would be option one:</h2>
-                          <p class="lead" id="option1P1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                          <p class="lead" id="option1P2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
-                          <p class="lead" id="option1P3">Ideally, there would be an accordion here to cycle through other sections like this.</p>
-                          <a id="option1A" href="" target="_blank"></a>
-                      </div>
-                  </section>
+                  <div class="carousel"
+                    data-flickity='{ "wrapAround": true }'>
+                    <div class="carousel-cell"><img src="./assets/img/brown_candle_holder_on_brown_wooden_table-scopio-92fb255c-c797-48fd-a72f-fc7bf0d23f5c.jpg"></div>
+                    <div class="carousel-cell"><img src="./assets/img/brown_candle_holder_on_brown_wooden_table-scopio-92fb255c-c797-48fd-a72f-fc7bf0d23f5c.jpg"></div>
+                    <div class="carousel-cell"></div>
+                    <div class="carousel-cell"></div>
+                    <div class="carousel-cell"></div>
+                  </div>
+
+
                 </div>
               </div>
             </section>
@@ -168,20 +151,17 @@
     </main>
         
     <!-- Need a footer Section -->    
-    <footer class="text-left p-4 sticky-bottom" style="background-color:var(--dark);color:var(--lighter)">
-      <a href="">About</a>
+    <footer class="myFooter">
+      <a href="./about.html">About</a>
     </footer>        
 
 
-    
+    <!-- Flickity.js -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <!-- jQuery Code -->
-    <script 
-        src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Moment.js -->
-    <script
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
     ></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

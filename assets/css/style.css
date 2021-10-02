@@ -1,3 +1,8 @@
+* { 
+    box-sizing: border-box; 
+    overflow-x: hidden;
+}
+
 /* Set Color Scheme here*/
 :root {
     --light: #EDC7B7;
@@ -100,3 +105,35 @@ main {
     display: '';
 }
 
+.myFooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--dark);
+    color: var(--lighter);
+    text-align: center;
+    padding: 20px;
+}
+
+.myFooter a {
+    color: var(--lighter);
+}
+
+
+
+
+body { font-family: sans-serif; }
+
+.carousel {
+  background: #EEE;
+}
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
