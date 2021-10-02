@@ -1,6 +1,5 @@
 * { 
     box-sizing: border-box; 
-    overflow-x: hidden;
 }
 
 /* Set Color Scheme here*/
@@ -14,6 +13,7 @@
 
 main {
   color: var(--dark);
+  overflow-x: hidden;
 }
 
 .hide {
@@ -106,19 +106,3 @@ main {
 }
 
 
-
-
-body { font-family: sans-serif; }
-
-.carousel {
-  background: #EEE;
-}
-
-.carousel-cell {
-  width: 66%;
-  height: 200px;
-  margin-right: 10px;
-  background: #8C8;
-  border-radius: 5px;
-  counter-increment: carousel-cell;
-}

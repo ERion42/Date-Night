@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">    
     <title>Date Nite</title>
@@ -37,16 +36,8 @@
               </div>
           </nav>
     </header>
-      <!-- <form>
-        <div class="mb-3">
-          <label for="address" class="form-label">Address or city</label>
-          <input type="address" class="form-control" id="address">
-          <button type="submit" class="btn btn-primary">Submit</button>
-          <div id='addressEncoded'></div>
-        </div>
-    </form> -->
-    <main>
 
+    <main>
         <!-- Location Search -->
         <form class="locationSearch hide">
           <div class="mb-3 text-center">
@@ -87,16 +78,19 @@
               <div id="userInputAccordion-collapseOne" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingOne">
                 <div class="accordion-body">
                     <!-- Text and Results Go Here-->
-                    <!-- Carousel for Results -->
-                  <div class="carousel"
-                    data-flickity='{ "wrapAround": true }'>
-                    <div class="carousel-cell"><img src="./assets/img/brown_candle_holder_on_brown_wooden_table-scopio-92fb255c-c797-48fd-a72f-fc7bf0d23f5c.jpg"></div>
-                    <div class="carousel-cell"><img src="./assets/img/brown_candle_holder_on_brown_wooden_table-scopio-92fb255c-c797-48fd-a72f-fc7bf0d23f5c.jpg"></div>
-                    <div class="carousel-cell"></div>
-                    <div class="carousel-cell"></div>
-                    <div class="carousel-cell"></div>
-                  </div>
+                    <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
+                      <!-- Image... currently a stock placeholder image until we find something better -->
+                      <div class="col-10 col-sm-8 col-lg-6">
+                          <span class="activityImage"><img src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
+                      </div>
+                      <!-- This section explains the general premise of the application and how to use it -->
+                      <div class="col-lg-6 accordianContent">
+                          <h2 class="display-5 fw-bold lh-1 mb-3"><span class="activityHeader">So this would be option one:</span></h2>
+                          <p class="lead"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                      </div>
+                    </section>                    
 
+                    
 
                 </div>
               </div>
@@ -112,17 +106,15 @@
                     <!-- Text and Results Go Here-->
                     <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
                       <!-- Image... currently a stock placeholder image until we find something better -->
+                      <div class="col-10 col-sm-8 col-lg-6">
+                          <span class="activityImage"><img src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
+                      </div>
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6 accordianContent">
-                          <h2 id="option2H" class="display-5 fw-bold lh-1 mb-3">So this would be option two:</h2>
-                          <p id="option2P1" class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                          <p id="option2P2" class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
-                          <p id="option2P3" class="lead">Ideally, there would be an accordion here to cycle through other sections like this.</p>
+                          <h2 class="display-5 fw-bold lh-1 mb-3"><span class="activityHeader">So this would be option two:</span></h2>
+                          <p class="lead"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                       </div>
-                      <div class="col-10 col-sm-8 col-lg-6">
-                        <img id="option2I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
-                      </div>
-                    </section>
+                    </section>                    
 
                 </div>
               </div>
@@ -139,14 +131,12 @@
                     <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
                       <!-- Image... currently a stock placeholder image until we find something better -->
                       <div class="col-10 col-sm-8 col-lg-6">
-                          <img src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
+                          <span class="activityImage"><img src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
                       </div>
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6 accordianContent">
-                          <h2 class="display-5 fw-bold lh-1 mb-3">So this would be option three:</h2>
-                          <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
-                          <p class="lead">Ideally, there would be an accordion here to cycle through other sections like this.</p>
+                          <h2 class="display-5 fw-bold lh-1 mb-3"><span class="activityHeader">So this would be option three:</span></h2>
+                          <p class="lead"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                       </div>
                     </section>                    
                     
@@ -164,8 +154,6 @@
     </footer>        
 
 
-    <!-- Flickity.js -->
-    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <!-- jQuery Code -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Moment.js -->
@@ -178,7 +166,6 @@
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./questions.js"></script>
-
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>
 
     
