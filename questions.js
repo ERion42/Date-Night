@@ -68,7 +68,7 @@ var drinksQuestions = [
 var eventQuestions = [
     {
         title: "What is your go-to event?",
-        choices: ["Concert", "Sports", "Comedy", "Interactive"],
+        choices: ["Concert", "Sports", "Comedy", "Shows"],
         result: "eventr"
     },
     {
