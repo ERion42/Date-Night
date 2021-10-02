@@ -1,3 +1,7 @@
+* { 
+    box-sizing: border-box; 
+}
+
 /* Set Color Scheme here*/
 :root {
   --light: #edc7b7;
@@ -9,6 +13,7 @@
 
 main {
   color: var(--dark);
+  overflow-x: hidden;
 }
 
 .hide {
@@ -85,3 +90,19 @@ main {
 #addressSection {
   display: '';
 }
+
+.myFooter {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--dark);
+    color: var(--lighter);
+    text-align: center;
+    padding: 20px;
+}
+
+.myFooter a {
+    color: var(--lighter);
+}
+
+
