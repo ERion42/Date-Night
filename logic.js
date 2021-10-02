@@ -1,17 +1,3 @@
-var elem = document.querySelector('.main-carousel');
-var flkty = new Flickity( elem, {
-  // options
-  cellAlign: 'left',
-  contain: true
-});
-
-
-$('.btnBegin').on('click',function(){
-    $('.firstPage').toggleClass('landingSection')
-    $('.checkBox').toggleClass('checkboxSection')
-    $('.jumbo').toggleClass('myJumbotron')
-})
-
 var stayingB = false
 var goingB = false
 var activeB = false
