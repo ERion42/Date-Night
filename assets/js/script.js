@@ -42,7 +42,7 @@ var geocodeAddress = function(address){
    }).then(searchMultiple());
 
 };
-// https://enigmatic-citadel-24557.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbySearch/json?&location=33.7489954.-84.3879824&radius=15000&key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578
+https://enigmatic-citadel-24557.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbySearch/json?&location=33.7489954.-84.3879824&radius=15000&key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578
 
 //Event listener for the address form submit button. Calls geocodeAddress function.
 $('form').submit(function(event){
@@ -53,9 +53,9 @@ $('form').submit(function(event){
 });
 
 //Empty initMap function to stop getting errors on page load because of the callback in the googleapis link in the html
-// var initMap = function (){
-//     console.log('initMap callback');
-// };
+var initMap = function (){
+    console.log('initMap callback');
+};
 
 
 var searchMultiple = function(){
