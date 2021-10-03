@@ -148,11 +148,11 @@ function init(){
 		
 		$('.locationSearch').toggleClass('hide')
 		console.log('bye')
-	}
-}
-
-
-
+		
+	}}
+	
+	
+	
 
 
 

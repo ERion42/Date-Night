@@ -199,6 +199,5 @@ function Results(){
     localStorage.setItem("drinkB",drinkB)
     
     console.log('hello')
-    debugger;
     document.location.replace('./results.html')
 }

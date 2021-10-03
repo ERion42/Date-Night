@@ -20,6 +20,10 @@ main {
   display: none;
 }
 
+.show {
+  display: block;
+}
+
 /* display:block by default, display:none after "Begin" button is pushed */
 .myJumbotron {
   background-color: var(--light) !important;

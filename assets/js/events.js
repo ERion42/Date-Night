@@ -24,10 +24,7 @@ if (eventB=="true"){
         var eventName = "shows";
     } 
     
-} else if (eventB!=="true") {
-    $(".accordian5").appendClass = "hide";
-    // $("#option5Dropdown").empty();
-}
+} 
 // Function for selecting which event to search and plugging that parameter into the fetch URL.
 
 function eventData() {
@@ -57,8 +54,18 @@ function eventList(data) {
     console.log(data);
 // If no events of that genre, the user can choose a different kind of event, or no event option.
     if (data.page.totalElements==0){ 
+        
+        fetch("https://enigmatic-citadel-24557.herokuapp.com/https://app.ticketmaster.com/discovery/v2/events.json?countryCode=US&city=Atlanta&startDateTime="+dateDay+"&endDateTime="+dateDay2+"&apikey=8oITwJQfLQI4isaAPt8K8RrTGpvcOYFv")
+        .then(response=> response.json())
+        .then(data => eventList2(data))
+
+        function eventList2(data) {
+            console.log(data);
+        }
         $("#option5Dropdown").append("Event");
-        $('#option5P1').append("There are no "+ eventName + " occuring today. Please select another genre from below.")
+        $('#option5P1').append("There are no "+ eventName + " occuring today. Please click on the link below to see all occuring events.")
+        $('#option5P1').append(
+        $("#option5P3").toggleClass("hide");
     } else {
     var num = Math.floor(Math.random()*data._embedded.events.length);
     console.log(num);
