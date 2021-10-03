@@ -8,7 +8,7 @@ var dateDay2 = dateDayEnd.format("YYYY-MM-DDTHH:mm:ssZ");
 // If statement to hide or show the events option on results page.
 var eventB = localStorage.getItem('eventB')
 
-console.log(eventB);
+// console.log(eventB);
 if (eventB=="true"){
 	eventData();
     
