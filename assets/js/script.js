@@ -151,7 +151,7 @@ function recrsiveFetch(dateOptions,i, latlng){
 var previousIndex = 0;
 var index = 0;
 function parseMapsData(keyname){
-	if (localStorage.getItem(keyname)){
+	// if (localStorage.getItem(keyname)){
 
 		var arr = [];
 
@@ -184,7 +184,7 @@ function parseMapsData(keyname){
 					}
 			
 		}	
-		}
+		// }
 
 	}
 
