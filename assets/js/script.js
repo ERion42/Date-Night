@@ -227,7 +227,21 @@ function init(){
 	}
 }
 
-
+if (drinkB == 'false'){
+	$('.accordion4').toggleClass('hide')
+}
+if (movieB == 'false'){
+	$('.accordion3').toggleClass('hide')
+}
+if (foodB == 'false'){
+	$('.accordion2').toggleClass('hide')
+}
+if (activeB == 'false'){
+	$('.accordion1').toggleClass('hide')
+}
+if(eventB == 'false'){
+	$('.accordion5').toggleClass('hide')
+}
 
 
 console.log(goingA);
