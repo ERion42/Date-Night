@@ -249,22 +249,23 @@ function writeFood(f){
 	console.log(f.recipes[0].title)
 	console.log(f.recipes[0].image)
 	console.log(f.recipes[0].readyInMinutes)
-	$('#option1I').attr('src', f.recipes[0].image)
-	$('#option1H').text(f.recipes[0].title)
-	$('#option1P1').text("Ready in "+f.recipes[0].readyInMinutes+" minutes")
-	$('#option1P2').text("Makes " + f.recipes[0].servings+ " servings")
-	$('#option1P3').empty()
-	$('#option1A').text("Here is a link to the recipe").attr('href',f.recipes[0].sourceUrl)
+	$('#option2I').attr('src', f.recipes[0].image)
+	$('#option2H').text(f.recipes[0].title)
+	$('#option2P1').text("Ready in "+f.recipes[0].readyInMinutes+" minutes")
+	$('#option2P2').text("Makes " + f.recipes[0].servings+ " servings")
+	$('#option2P3').empty()
+	$('#option2A').text("Here is a link to the recipe").attr('href',f.recipes[0].sourceUrl)
 }
 function writeMovie(m){
 	console.log(m.results[randM].title)
-	$('#option2H').text(m.results[randM].title)
-	$('#option2I').attr('src',m.results[randM].posterURLs.original)
-	$('#option2P1').text(m.results[randM].runtime+" minutes")
-	$('#option2P2').empty()
-	$('#option2P3').empty()
+	$('#option3H').text(m.results[randM].title)
+	$('#option3I').attr('src',m.results[randM].posterURLs.original)
+	$('#option3P1').text(m.results[randM].runtime+" minutes")
+	$('#option3P2').empty()
+	$('#option3P3').empty()
 }
 function randMovie(m2){
+	console.log(m2)
 	var totalPage = m2.total_pages
 	var finalPage = Math.floor(Math.random()*totalPage)
 	console.log(totalPage)
@@ -278,7 +279,7 @@ fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/rando
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-		"x-rapidapi-key": "6a33845cedmshfe3c200548f27bfp1afb9ejsne55a61a48c4b"
+		"x-rapidapi-key": "0c86673a91msh18102740756c84dp1c7dc9jsn4a761e4a08c1"
 	}
 })
 .then(response => response.json())
@@ -291,7 +292,7 @@ fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "streaming-availability.p.rapidapi.com",
-		"x-rapidapi-key": "6a33845cedmshfe3c200548f27bfp1afb9ejsne55a61a48c4b"
+		"x-rapidapi-key": "0c86673a91msh18102740756c84dp1c7dc9jsn4a761e4a08c1"
 	}
 })
 .then(response => response.json())
