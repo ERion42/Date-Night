@@ -1,17 +1,17 @@
 var timeOfYear = moment ()
 var seasons = timeOfYear.format("MMMM");
-// var generalQuestions = [
-//     {
-//         title: "What is your budget?",
-//         choices: ["Free only please", "$", "$$", "Absolutely down to ball out tonight"],
-//         result: "general"
-//     },
-//     {
-//         title: "What do you want the mood for the date to be?",
-//         choices: ["Active", "Lazy", "Romantic", "Spontaneous"],
-//         result: "general"
-//     }
-// ];
+var generalQuestions = [
+    {
+        title: "What is your budget?",
+        choices: ["Free only please", "$", "$$", "Absolutely down to ball out tonight"],
+        result: "general"
+    },
+    {
+        title: "What do you want the mood for the date to be?",
+        choices: ["Active", "Lazy", "Romantic", "Spontaneous"],
+        result: "general"
+    }
+];
 
 var goingOut = [
     {
@@ -50,9 +50,14 @@ var movieQuestions = [
 var drinksQuestions = [
     {
         title: "What is your kind of scene?",
-        choices: ["Bars", "Night Club"],
+        choices: ["Bars", "Night Clubs"],
         result: "drinky"
     }
+    // {
+    //     title: "What kind of drinks do you like?",
+    //     choices: ["Liquor", "Beer", "Wine", "Non-Alcoholic Beverages", "Milkshakes"],
+    //     result: "drinky"
+    // }
 ];
 
 var eventQuestions = [
