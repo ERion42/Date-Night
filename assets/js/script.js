@@ -230,25 +230,30 @@ function movieData(){
 
 function foodData(){
 	if ((foodA[0]=="No-Preference")&&(foodA[1]=="No-Preference")){
-		var tags = food1 +","+ food2
-		foodRequest(tags)
+		var tags = ""
+		return foodRequest(tags)
+		
 	}
 	if(foodA[0]=="No-Preference"){
 		var food1 = ""
 		var tags = food1+ "," + foodA[1].toLowerCase()
+		return foodRequest(tags)
 
 	}
 	if(foodA[1]=="No-Preference"){
 		var food2 = ""
 		var tags = foodA[0].toLowerCase() +","+food2
-		foodRequest(tags)
+		 return foodRequest(tags)
+		
 	} else {
 	var tags = foodA[0].toLowerCase()+","+ foodA[1].toLowerCase()
-	foodRequest(tags)
-	}
+	return foodRequest(tags)
+}
+
 }
 
 function writeFood(f){
+	console.log(f)
 	console.log(f.recipes[0].title)
 	console.log(f.recipes[0].image)
 	console.log(f.recipes[0].readyInMinutes)
@@ -277,23 +282,24 @@ function randMovie(m2){
 	return movie2Requesting()
 }
 
-// function foodRequest (tags){
-// fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-// 		"x-rapidapi-key": "6a33845cedmshfe3c200548f27bfp1afb9ejsne55a61a48c4b"
-// 	}
-// })
-// .then(function(response){
-// 	if (response.status != 200){
-// 		return foodError()
-// 	} else {
-// 		return response.json()
-// 	}
-// })
-// .then(data => writeFood(data));
-// }
+function foodRequest (tags){
+fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+		"x-rapidapi-key": "6a33845cedmshfe3c200548f27bfp1afb9ejsne55a61a48c4b"
+	}
+})
+.then(function(response){
+	if (response.status != 200){
+		return foodError()
+	} else {
+		console.log('good')
+		return response.json()
+	}
+})
+.then(data => writeFood(data));
+}
 
 function movieRequest (service,genreCode){
 	console.log('step 1')
