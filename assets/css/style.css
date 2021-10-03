@@ -1,102 +1,108 @@
+* { 
+    box-sizing: border-box; 
+}
+
 /* Set Color Scheme here*/
 :root {
-    --light: #EDC7B7;
-    --lighter: #EEE2DC;
-    --dark: #123C69;
-    --accent: #AC3B61;
-    --greyish: #BAB2B5;
+  --light: #edc7b7;
+  --lighter: #eee2dc;
+  --dark: #123c69;
+  --accent: #ac3b61;
+  --greyish: #bab2b5;
 }
 
 main {
-    color: var(--dark);
+  color: var(--dark);
+  overflow-x: hidden;
 }
 
 .hide {
-    display:none;
-}
-
-.mainPage {
-    padding-top: 0px !important;
+  display: none;
 }
 
 /* display:block by default, display:none after "Begin" button is pushed */
 .myJumbotron {
-    background-color: var(--light) !important;
-    color: var(--dark);
-    display: block;
-    padding: 0px;
+  background-color: var(--light) !important;
+  color: var(--dark);
+  display: block;
 }
 
 .bg-dark {
-    color: white !important;
-    background: var(--dark) !important;
+  color: white !important;
+  background: var(--dark) !important;
 }
 
-
+.btnBegin {
+  background: var(--dark) !important;
+}
 
 .questionsContainer {
-    display: grid;
-    /* creating two equal columns, fr= fraction */
-    grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 5px;
-
+  display: grid;
+  /* creating two equal columns, fr= fraction */
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 5px;
 }
 
 /* display:flex by default, display:none after "Begin" button is pushed */
 .landingSection {
-    margin-top: 0px;
-    display: flex;
+  margin-top: 50px;
+  display: flex;
 }
 
 /* display:none by default, display:flex after "Begin" button is pushed, display:none after "Continue" button is pushed */
 .checkboxSection {
-    display: flex;
-    padding-top: 0;
-}
-
-
-.btnBegin {
-    background: var(--dark) !important;
-}
-
-.btnDatePickerSubmit {
-    background: var(--dark) !important;
+  display: flex;
 }
 
 .btnContinue {
-    margin-top: 15px;
-    background: var(--dark) !important;
+  margin-top: 15px;
+  background: var(--dark) !important;
 }
 
 .btnAnswer {
-    background: var(--dark) !important;
+  background: var(--dark) !important;
 }
 
 .questionPrompt {
-    margin: 35px 0 35px 0;
+  margin: 35px 0 35px 0;
 }
 
 /* display:none by default, display:inline after "Continue" button is pushed */
 .questions {
-    display: inline;
+  display: inline;
 }
 
 .questions h3 {
-    margin: 55px;
+  margin: 55px;
 }
 
 .answerClass {
-    list-style-type: none;
-    width: 100%;
+  list-style-type: none;
+  width: 100%;
 }
 
 .btnSubmit {
-    background: var(--dark) !important;
+  background: var(--dark) !important;
 }
 
 /* Display:none by default, but under right circumstances display: '' */
 #addressSection {
-    display: '';
+  display: '';
 }
+
+.myFooter {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--dark);
+    color: var(--lighter);
+    text-align: center;
+    padding: 20px;
+}
+
+.myFooter a {
+    color: var(--lighter);
+}
+
 

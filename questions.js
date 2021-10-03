@@ -71,11 +71,6 @@ var eventQuestions = [
         choices: ["Concert", "Sports", "Comedy", "Shows"],
         result: "eventr"
     },
-    {
-        title: "What is your ideal environment?",
-        choices: ["Upscale", "Hyped", "Relaxed", "Thought-Provoking"],
-        result: "eventr"
-    }
 ];
 
 var foodQuestions = [
@@ -92,4 +87,3 @@ var foodQuestions = [
 ];
 
 
-var miscArray = ["Video Game Night","Do a Puzzle","Decorate for a Holiday","Indoor Camping","Be Artistic","Have a Dance Party","Spa at Home","Create a Photo Book"]
