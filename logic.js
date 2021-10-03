@@ -201,8 +201,5 @@ function Results(){
     localStorage.setItem("foodB",foodB)
     localStorage.setItem("eventB",eventB)
     localStorage.setItem("drinkB",drinkB)
-    
-    console.log('hello')
-    debugger;
     document.location.replace('./results.html')
 }

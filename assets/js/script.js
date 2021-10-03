@@ -227,7 +227,21 @@ function init(){
 	}
 }
 
+if (drinkB == 'false'){
+	
+}
+if (movieB == 'false'){
 
+}
+if (foodB == 'false'){
+
+}
+if (activeB == 'false'){
+
+}
+if(eventB == 'false'){
+
+}
 
 
 console.log(goingA);
