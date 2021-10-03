@@ -33,10 +33,8 @@ var goOut = document.getElementById("cb21");
 
 // Variables set for the time of day the date will take place.
 
-var morning = document.getElementById("cb31");
-var midday = document.getElementById("cb32");
-var afternoon = document.getElementById("cb33");
-var night = document.getElementById("cb34");
+var day = document.getElementById("radio1");
+var night = document.getElementById("radio2");
 
 // If statements to link the checklists to the corresponding question arrays.
 var pushArray = function() {
@@ -76,6 +74,12 @@ $('.questionsS').toggleClass('hide')
     };
     console.log(questions);
     displayQuestions(questions);
+    if (radio1.checked==true){
+        localStorage.setItem('timeOfDay', 'Day');
+    }
+    if(radio2.checked==true){
+        localStorage.setItem('timeOfDay', 'Night');
+    }
 }
 
 submit.addEventListener("click", pushArray);
@@ -197,7 +201,5 @@ function Results(){
     localStorage.setItem("foodB",foodB)
     localStorage.setItem("eventB",eventB)
     localStorage.setItem("drinkB",drinkB)
-    
-    console.log('hello')
     document.location.replace('./results.html')
 }

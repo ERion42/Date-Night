@@ -5,10 +5,6 @@ console.log(dateDay);
 var dateDayEnd = moment().add(1,"days");
 var dateDay2 = dateDayEnd.format("YYYY-MM-DDTHH:mm:ssZ");
 
-// If statement to hide or show the events option on results page.
-var eventB = localStorage.getItem('eventB')
-
-// console.log(eventB);
 if (eventB=="true"){
 	eventData();
     
@@ -48,7 +44,7 @@ function eventData() {
     .then(data => eventList(data))
 }
 
-// Function for checking if there are events for that day and if so, displaying the information on the results page.
+
 
 function eventList(data) {
     console.log(data);
@@ -70,21 +66,20 @@ function eventList(data) {
     var num = Math.floor(Math.random()*data._embedded.events.length);
     console.log(num);
     var dayOfEvent = data._embedded.events[num].dates.start.localDate;
-    
+    // console.log(dayOfEvent);
+    // Date.getDate();
     var timeOfEvent = data._embedded.events[num].dates.start.localTime;
-   
+    // timeOfEvent.getHour();
+    // console.log(dayOfEvent);
+    // console.log(timeOfEvent);
+    // var eventTime = moment(timeOfEvent).format("h:m A");
+    // var eventDate = moment(dayOfEvent).format("MMMM D, YYYY");
+    // }
     var imageURL = data._embedded.events[num].images[6].url;
-    console.log(imageURL);
-    if ("outlets" in data._embedded.events[num]) {
-        var ticketPurcharURL = data._embedded.events[num].outlets[0].url;
-    } else{
-    var ticketPurcharURL = data._embedded.events[num].url;
-    }
+    var ticketPurcharURL = data._embedded.events[num].outlets.url;
     console.log(ticketPurcharURL);
-    $("#option5Dropdown").append("Event");
     $("#option5I").attr("src",imageURL);
     $('#option5P1').append(data._embedded.events[num].name);
     $('#option5P2').append("Date and Time: "+dayOfEvent+" at " +timeOfEvent);
     $('#ticketPurchase').attr("href", ticketPurcharURL);
-    }
 }
