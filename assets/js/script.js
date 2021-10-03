@@ -111,7 +111,7 @@ var searchMultiple = function(){
     }
 }
 
-var generalA = JSON.parse(localStorage.getItem("general"))
+// var generalA = JSON.parse(localStorage.getItem("general"))
 var foodA = JSON.parse(localStorage.getItem("food"))
 var activeA = JSON.parse(localStorage.getItem("active"))
 var goingA = JSON.parse(localStorage.getItem("goingO"))
