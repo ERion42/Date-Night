@@ -55,14 +55,14 @@ var movieQuestions = [
 var drinksQuestions = [
     {
         title: "What is your kind of scene?",
-        choices: ["Dive Bars", "Retro", "Dance Club", "Live Music", "Outdoor Bar"],
-        result: "drinky"
-    },
-    {
-        title: "What kind of drinks do you like?",
-        choices: ["Liquor", "Beer", "Wine", "Non-Alcoholic Beverages", "Milkshakes"],
+        choices: ["Bars", "Night Clubs"],
         result: "drinky"
     }
+    // {
+    //     title: "What kind of drinks do you like?",
+    //     choices: ["Liquor", "Beer", "Wine", "Non-Alcoholic Beverages", "Milkshakes"],
+    //     result: "drinky"
+    // }
 ];
 
 var eventQuestions = [

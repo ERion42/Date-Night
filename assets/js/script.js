@@ -14,7 +14,8 @@ var foodB = localStorage.getItem('foodB')
 var eventB = localStorage.getItem('eventB')
 var drinkB = localStorage.getItem('drinkB')
 var randM = Math.floor(Math.random()*7)
-
+var timeOfDay = localStorage.getItem('timeOfDay');
+console.log(drinkA);
 //Declaring global variables for the Google Maps API
 var mapsAPIKeySuffix = '&key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578';
 var mapsAPIUrlPrefix = 'https://maps.googleapis.com/maps/api/';
@@ -56,10 +57,10 @@ var searchMultiple = function(){
     //Checks boolean value of user inputs and pushes search criteria into dateOptions array if true. Calls the fetch and parse functions only if true.
     if(goingOut === 'true'){
             if(searchBars === 'true'){
-				if(scenePreference === 'bar'){
+				if(drinkA[0] === 'Bars'){
 					dateOptions.push('bar');
-				}else if((scenePreference === 'nightClub') && (timeOfDay === 'Night')){
-					dateOptions.push('night_clubs');
+				}else if((drinkA[0] === 'Night Clubs') && (timeOfDay === 'Night')){
+					dateOptions.push('night_club');
 				}                
             }
             if(searchTheaters === 'true'){
@@ -94,9 +95,9 @@ var searchMultiple = function(){
 			
 			Remove type of drink question and change "What's your scene" to only include bar or night club. If possible only show if "get drinks" is selected.
 			
-			Remove "No Preference" option on Indoor/Outdoor question. This quetion pares down the biggest set of fetches, with no preference it will make too many fetches all at once.
+			Remove "No Preference" option on Indoor/Outdoor question. This question pares down the biggest set of fetches, with no preference it will make too many fetches all at once.
 
-			The "What's your budget" question is proving difficult to use. I'm getting price data but selecting outpput based on that data is difficult.
+			The "What's your budget" question is proving difficult to use. I'm getting price data but selecting output based on that data is difficult.
 
 			I have no way to use the "What do you want your activity to be?" question. I don't know if anyone else does.  
 
@@ -153,29 +154,40 @@ function parseMapsData(keyname){
 	if (localStorage.getItem(keyname)){
 
 		var arr = [];
-		for (var i=0; i <3; i++){
-			var queryData = JSON.parse(localStorage.getItem(keyname));
-			previousIndex = index;
-			index = Math.floor(Math.random() * queryData.results.length);
-			// console.log(queryData);
-			//checks if the query has zero results and removes the local storage key if true. This is to prevent a stack overflow. It then recursively calls the function.
-			if(queryData.status === 'ZERO_RESULTS'){
-				console.log("Sorry, we didn't find any results for " + keyname);
-				localStorage.removeItem(keyname);
-				console.log(queryData);
-				return parseMapsData(keyname);
-			}else if(previousIndex === index){
-				 return parseMapsData(keyname);
-			}else{
-                arr.push(queryData.results[index])
-				var option = JSON.stringify(arr[i]);
-				localStorage.setItem(keyname + i, option);
-			}
+
+				for (var i=0; i <3; i++){
+					var queryData = JSON.parse(localStorage.getItem(keyname));
+					previousIndex = index;
+					index = Math.floor(Math.random() * queryData.results.length);
+
+					//checks if the query has zero results and removes the local storage key if true. This is to prevent a stack overflow. It then recursively calls the function.
+					if(queryData.status === 'ZERO_RESULTS'){
+						console.log("Sorry, we didn't find any results for " + keyname);
+						localStorage.removeItem(keyname);
+						console.log(queryData);
+						return parseMapsData(keyname);
+					
+					}else if(previousIndex === index){
+				 		return parseMapsData(keyname);
+
+					//The following elseif statement checks to see if the next result is undefined (in case fewer than 3 but more than 0 results were found). If so, it sets i equal to 3 which should trigger the call for the recursive function with the next keyname. This allows for existing results to be added to local storage without repeats.
+					}else if(queryData.results[i] === undefined){
+						console.log("The search for " + keyname + " returned limited results.")
+						i=3;		
+					}else{
+
+
+						arr.push(queryData.results[index])
+						var option = JSON.stringify(arr[i]);
+						localStorage.setItem(keyname + i, option);
+
+					}
 			
-			
+		}	
 		}
+
 	}
-}
+
 
 function displayMapsData(dateOptions, keyname){
 	var arr = [];
