@@ -205,37 +205,32 @@ function displayMapsData(dateOptions, keyname){
 	
 }
 
-// console.log(randM)
-// function init(){
+console.log(randM)
+function init(){
 
-// 	if(stayingB == "true"){
-// 		if((foodB == "true")&&(movieB == "true")){
-// 			return foodData(),movieData()
-// 		}
-// 		else if(foodB == "true"){
-// 			return foodData()
-// 		} else if(movieB == "true"){
-// 		 return movieData();
-// 		} else {
-// 			console.log('try harder')
-// 		}
+	if(stayingB == "true"){
+		if((foodB == "true")&&(movieB == "true")){
+			return foodData(),movieData()
+		}
+		else if(foodB == "true"){
+			return foodData()
+		} else if(movieB == "true"){
+		 return movieData();
+		} else {
+			console.log('try harder')
+		}
 		
-// 	} else if (goingB == "true"){
+	} else if (goingB == "true"){
 		
-// 		$('.locationSearch').toggleClass('hide')
-// 		console.log('bye')
-// 	}
-// }
+		$('.locationSearch').toggleClass('hide')
+		console.log('bye')
+	}
+}
 
 
 
 
-// console.log(goingA);
-
-
-
-
-
+console.log(goingA);
 
 
 
@@ -263,107 +258,159 @@ function displayMapsData(dateOptions, keyname){
 
 
 
+function movieData(){
+	console.log(movieA)
+	var serviceU = (movieA[0])
+	var service = serviceU.toLowerCase()
+	console.log(service)
+	if (movieA[1] == "Mystery/Crime"){
+		var genreCode = '80'
+		
+	} 
+	if (movieA[1] == "Comedy"){
+		var genreCode = '35'
+		
+	}
+	if (movieA[1] == "Horror"){
+		console.log('boo')
+		var genreCode = '27'
+		
+	}
+	if (movieA[1] == "Fantasy"){
+		var genreCode = '14'
+		
+	}
+	if (movieA[1]=="Drama"){
+		var genreCode = '18'
+		
+	}
+	localStorage.setItem('service',service)
+	localStorage.setItem('genre',genreCode)
+	movieRequest(service, genreCode)
+}
 
-// function placeHolderDates(){
-// 	$('.accordianContent').each(function(){
-// 		$(this).children('h2').text(miscArray[1])
-// 	})
-	
-// }
+function foodData(){
+	if ((foodA[0]=="No-Preference")&&(foodA[1]=="No-Preference")){
+		var tags = ""
+		return foodRequest(tags)
+		
+	}
+	if(foodA[0]=="No-Preference"){
+		var food1 = ""
+		var tags = food1+ "," + foodA[1].toLowerCase()
+		return foodRequest(tags)
 
+	}
+	if(foodA[1]=="No-Preference"){
+		var food2 = ""
+		var tags = foodA[0].toLowerCase() +","+food2
+		 return foodRequest(tags)
+		
+	} else {
+	var tags = foodA[0].toLowerCase()+","+ foodA[1].toLowerCase()
+	return foodRequest(tags)
+}
 
+}
 
-// function movieData(){
-// 	console.log(movieA)
-// 	var serviceU = (movieA[0])
-// 	var service = serviceU.toLowerCase()
-// 	console.log(service)
-// 	if (movieA[1] == "Mystery/Crime"){
-// 		var genreCode = '80'
-// 		movieRequest(service,genreCode)
-// 	} 
-// 	if (movieA[1] == "Comedy"){
-// 		var genreCode = '35'
-// 		movieRequest(service, genreCode)
-// 	}
-// 	if (movieA[1] == "Horror"){
-// 		console.log('boo')
-// 		var genreCode = '27'
-// 		movieRequest(service, genreCode)
-// 	}
-// 	if (movieA[1] == "Fantasy"){
-// 		var genreCode = '14'
-// 		movieRequest(service, genreCode)
-// 	}
-// 	if (movieA[1]=="Drama"){
-// 		var genreCode = '18'
-// 		movieRequest(service, genreCode)
-// 	}
-// }
+function writeFood(f){
+	console.log(f)
+	console.log(f.recipes[0].title)
+	console.log(f.recipes[0].image)
+	console.log(f.recipes[0].readyInMinutes)
+	$('#option2I').attr('src', f.recipes[0].image)
+	$('#option2H').text(f.recipes[0].title)
+	$('#option2P1').text("Ready in "+f.recipes[0].readyInMinutes+" minutes")
+	$('#option2P2').text("Makes " + f.recipes[0].servings+ " servings")
+	$('#option2P3').empty()
+	$('#option2A').text("Here is a link to the recipe").attr('href',f.recipes[0].sourceUrl)
+}
+function writeMovie(m){
+	console.log(m.results[randM].title)
+	$('#option3H').text(m.results[randM].title)
+	$('#option3I').attr('src',m.results[randM].posterURLs.original)
+	$('#option3P1').text(m.results[randM].runtime+" minutes")
+	$('#option3P2').empty()
+	$('#option3P3').empty()
+}
+function randMovie(m2){
+	console.log(m2)
+	var totalPage = m2.total_pages
+	var finalPage = Math.floor(Math.random()*totalPage)
+	console.log(totalPage)
+	console.log(finalPage)
+	localStorage.setItem("page", finalPage)
+	return movie2Requesting()
+}
 
-// function foodData(){
-// 	if ((foodA[0]=="No-Preference")&&(foodA[1]=="No-Preference")){
-// 		var tags = food1 +","+ food2
-// 		foodRequest(tags)
-// 	}
-// 	if(foodA[0]=="No-Preference"){
-// 		var food1 = ""
-// 		var tags = food1+ "," + foodA[1].toLowerCase()
+function foodRequest (tags){
+fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+		"x-rapidapi-key": "6a33845cedmshfe3c200548f27bfp1afb9ejsne55a61a48c4b"
+	}
+})
+.then(function(response){
+	if (response.status != 200){
+		return foodError()
+	} else {
+		console.log('good')
+		return response.json()
+	}
+})
+.then(data => writeFood(data));
+}
 
-// 	}
-// 	if(foodA[1]=="No-Preference"){
-// 		var food2 = ""
-// 		var tags = foodA[0].toLowerCase() +","+food2
-// 		foodRequest(tags)
-// 	} else {
-// 	var tags = foodA[0].toLowerCase()+","+ foodA[1].toLowerCase()
-// 	foodRequest(tags)
-// 	}
-// }
+function movieRequest (service,genreCode){
+	console.log('step 1')
+fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service="+service+"&type=movie&genre="+ genreCode, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "streaming-availability.p.rapidapi.com",
+		"x-rapidapi-key": "0c86673a91msh18102740756c84dp1c7dc9jsn4a761e4a08c1"
+	}
+})
+.then(function(response){
+	if (response.status != 200){
+		return movieError()
+	} else {
+		return response.json()
+	}
+})
+.then(data => randMovie(data))
+// 4: musical, 12: Adventure, 14: fantasy, 18: Drama, 27: Horror, 28: Action, 35: Comedy, 80: Crime, 878: Science fiction, 10749: Romance.
+}
+function movie2Requesting (){
+	console.log('step 2')
+var pageNum = localStorage.getItem('page')
+var service = localStorage.getItem('service')
+var genreCode = localStorage.getItem('genre')
+fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service="+service+"&type=movie&genre="+ genreCode+ "&page="+ pageNum, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "streaming-availability.p.rapidapi.com",
+		"x-rapidapi-key": "0c86673a91msh18102740756c84dp1c7dc9jsn4a761e4a08c1"
+	}
+})
+.then(response => response.json())
+.then(data => writeMovie(data))
+// 4: musical, 12: Adventure, 14: fantasy, 18: Drama, 27: Horror, 28: Action, 35: Comedy, 80: Crime, 878: Science fiction, 10749: Romance.
+}
 
-// function writeFood(f){
-// 	console.log(f.recipes[0].title)
-// 	console.log(f.recipes[0].image)
-// 	console.log(f.recipes[0].readyInMinutes)
-// 	$('#option1I').attr('src', f.recipes[0].image)
-// 	$('#option1H').text(f.recipes[0].title)
-// 	$('#option1P1').text("Ready in "+f.recipes[0].readyInMinutes+" minutes")
-// 	$('#option1P2').text("Makes " + f.recipes[0].servings+ " servings")
-// 	$('#option1P3').empty()
-// 	$('#option1A').text("Here is a link to the recipe").attr('href',f.recipes[0].sourceUrl)
-// }
-// function writeMovie(m){
-// 	console.log(m.results[randM].title)
-// 	$('#option2H').text(m.results[randM].title)
-// 	$('#option2I').attr('src',m.results[randM].posterURLs.original)
-// 	$('#option2P1').text(m.results[randM].runtime+" minutes")
-// 	$('#option2P2').empty()
-// 	$('#option2P3').empty()
-// }
+function foodError(){
+	$('#option2H').text('Sorry, Something Went Wrong On Our End')
+	$('#option2P1').text('we are currently working on getting this fixed')
+	$('#option2P2').empty()
+	$('#option2P3').empty()
+	$('#option2A').text('Heres a link to a good site in the meantime').attr('href','https://www.allrecipes.com/recipes/')
+	return console.log('oops!!!!!!!!')
+}
+function movieError(){
+	$('#option3H').text('Sorry, Something Went Wrong On Our End')
+	$('#option3P1').text('we are currently working on getting this fixed')
+	$('#option3P2').text('try searching a different genre or service!')
+	$('#option3P3').empty()
+}
 
-// function foodRequest (tags){
-// fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-// 		"x-rapidapi-key": "6a33845cedmshfe3c200548f27bfp1afb9ejsne55a61a48c4b"
-// 	}
-// })
-// .then(response => response.json())
-// .then(data => writeFood(data));
-// }
-
-// function movieRequest (service,genreCode){
-
-// fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service="+service+"&type=movie&genre="+ genreCode, {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "streaming-availability.p.rapidapi.com",
-// 		"x-rapidapi-key": "6a33845cedmshfe3c200548f27bfp1afb9ejsne55a61a48c4b"
-// 	}
-// })
-// .then(response => response.json())
-// .then(data => writeMovie(data))
-// // 4: musical, 12: Adventure, 14: fantasy, 18: Drama, 27: Horror, 28: Action, 35: Comedy, 80: Crime, 878: Science fiction, 10749: Romance.
-// }
-// init()
+init()

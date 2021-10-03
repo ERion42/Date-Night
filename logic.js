@@ -1,7 +1,7 @@
 $('.btnBegin').on('click',function(){
     $('.firstPage').toggleClass('landingSection')
     $('.checkBox').toggleClass('checkboxSection')
-    $('.jumbo').toggleClass('myJumbotron')
+    $('.myJumbotron').css('display','none')
 })
 
 
@@ -14,9 +14,10 @@ var movieB = false
 var foodB = false
 var eventB = false
 var drinkB = false
-var questions = generalQuestions;
+var questions = [];
 var submit = document.querySelector("#checkboxSubmit");
 
+console.log(eventB)
 // Variables set for each event checkbox.
 
 var activity = document.getElementById("cb1");
@@ -113,7 +114,7 @@ function displayQuestions (){
     var firstQuestion = questions[index];
 
     
-        var count = index+1;
+        // var count = index+1;
         if (index+1 > questions.length){
             $('.questionsS').toggleClass('hide')
             Results()
@@ -185,6 +186,7 @@ function Results(){
             foodZ.push(selections[i].final)
         }
     }
+    console.log(eventB);
     localStorage.setItem("general" , JSON.stringify(general))
     localStorage.setItem("food" , JSON.stringify(foodZ))
     localStorage.setItem("active" , JSON.stringify(active))
@@ -199,6 +201,8 @@ function Results(){
     localStorage.setItem("foodB",foodB)
     localStorage.setItem("eventB",eventB)
     localStorage.setItem("drinkB",drinkB)
+    
     console.log('hello')
+    debugger;
     document.location.replace('./results.html')
 }

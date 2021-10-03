@@ -15,11 +15,6 @@ var generalQuestions = [
 
 var goingOut = [
     {
-        title: "How many people are you comfortable with being around in public?",
-        choices: ["No people", "Small groups (max of 30)", "Larger groups (max of 100)", "I love crowds!"],
-        result: "goingOut"
-    },
-    {
         title: "Would you prefer being indoors or outdoors?",
         choices: ["Indoor", "Outdoor", "No Preference"],
         result: "goingOut"
