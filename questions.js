@@ -15,11 +15,6 @@ var seasons = timeOfYear.format("MMMM");
 
 var goingOut = [
     {
-        title: "How many people are you comfortable with being around in public?",
-        choices: ["No people", "Small groups (max of 30)", "Larger groups (max of 100)", "I love crowds!"],
-        result: "goingOut"
-    },
-    {
         title: "Would you prefer being indoors or outdoors?",
         choices: ["Indoor", "Outdoor", "No Preference"],
         result: "goingOut"
@@ -55,12 +50,7 @@ var movieQuestions = [
 var drinksQuestions = [
     {
         title: "What is your kind of scene?",
-        choices: ["Dive Bars", "Retro", "Dance Club", "Live Music", "Outdoor Bar"],
-        result: "drinky"
-    },
-    {
-        title: "What kind of drinks do you like?",
-        choices: ["Liquor", "Beer", "Wine", "Non-Alcoholic Beverages", "Milkshakes"],
+        choices: ["Bars", "Night Club"],
         result: "drinky"
     }
 ];

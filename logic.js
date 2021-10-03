@@ -1,7 +1,7 @@
 $('.btnBegin').on('click',function(){
     $('.firstPage').toggleClass('landingSection')
     $('.checkBox').toggleClass('checkboxSection')
-    $('.jumbo').toggleClass('myJumbotron')
+    $('.myJumbotron').css('display','none')
 })
 
 
