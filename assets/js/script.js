@@ -271,7 +271,7 @@ function randMovie(m2){
 	console.log(totalPage)
 	console.log(finalPage)
 	localStorage.setItem("page", finalPage)
-	movie2Requesting()
+	return movie2Requesting()
 }
 
 function foodRequest (tags){
@@ -282,7 +282,13 @@ fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/rando
 		"x-rapidapi-key": "0c86673a91msh18102740756c84dp1c7dc9jsn4a761e4a08c1"
 	}
 })
-.then(response => response.json())
+.then(function(response){
+	if (response.status != 200){
+		return foodError()
+	} else {
+		return response.json()
+	}
+})
 .then(data => writeFood(data));
 }
 
@@ -302,21 +308,27 @@ fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
 function movie2Requesting (){
 	console.log('step 2')
 var pageNum = localStorage.getItem('page')
-console.log(pageNum)
 var service = localStorage.getItem('service')
-console.log(service)
 var genreCode = localStorage.getItem('genre')
-console.log(genreCode)
 fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service="+service+"&type=movie&genre="+ genreCode+ "&page="+ pageNum, {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "streaming-availability.p.rapidapi.com",
-		"x-rapidapi-key": "6a33845cedmshfe3c200548f27bfp1afb9ejsne55a61a48c4b"
+		"x-rapidapi-key": "0c86673a91msh18102740756c84dp1c7dc9jsn4a761e4a08c1"
 	}
 })
 .then(response => response.json())
 .then(data => writeMovie(data))
 // 4: musical, 12: Adventure, 14: fantasy, 18: Drama, 27: Horror, 28: Action, 35: Comedy, 80: Crime, 878: Science fiction, 10749: Romance.
+}
+
+function foodError(){
+	$('#option2H').text('Sorry, Something Went Wrong On Our End')
+	$('#option2P1').text('we are currently working on getting this fixed')
+	$('#option2P2').empty()
+	$('#option2P3').empty()
+	$('#option2A').text('Heres a link to a good site in the meantime').attr('href','https://www.allrecipes.com/recipes/')
+	return console.log('oops!!!!!!!!')
 }
 
 init()
