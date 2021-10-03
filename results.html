@@ -17,7 +17,7 @@
             <div class="container-fluid">
               <!-- Take us back to the home page-->
               <a class="navbar-brand" href="#">Date Night</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars02" aria-controls="navbars02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
         
@@ -32,25 +32,12 @@
                           </svg>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <!-- This link could be used to refresh data -->
-              <!--
-                    <a class="nav-link" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="16" fill="white" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
-                            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
-                          </svg>
-                    </a>
-                  </li>
                 </ul>
               </div>
-              -->
-            </div>
           </nav>
-        <!-- Navbar -->
     </header>
-      <main>
 
+    <main>
         <!-- Location Search -->
         <form class="locationSearch">
           <div class="mb-3 text-center">
@@ -63,16 +50,26 @@
         </form>
 
         <!-- Results Presentation -->
-        <div class="p-5 mb-4 bg-light rounded-3">
-          <div class="container-fluid py-5">
-            <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-            <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-            <button class="btn btn-primary btn-lg" type="button">Example button</button>
-          </div>
-        </div>
+        <section class="container col-xxl-8 px-4 py-5 mainPage">
+          <section class="secondPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection">
+
+            <div class="col-lg-6">
+              <h1>That's it! Your results are below!</h1>
+              <p class="lead">Thank you for answering those questions! Below are the things we picked for you based on your answers. We hope you have a wonderful date!</p>
+              <p class="lead">And if your date does not go well, you can always blame the app!</p>
+            </div>
+            <div class="col-10 col-sm-8 col-lg-6">
+              <img src="./assets/img/man_in_brown_and_white_plaid_dress_shirt_holding_hands_with_woman_in_black_dress-scopio-7c075e68-f1e2-453d-a43d-7a23d5df7f94.jpg" class="d-block mx-lg-auto img-fluid mainPic" alt="Photo by  Andrii Omelnytskyi  on  Scopio">
+            </div>
+
+          </section>
+          
+
+        </section>
 
         <!-- Accordion Begins -->
         <section class="accordion" id="userInputAccordion">
+          <!-- Activity -->
             <section class="accordion-item">
               <h2 class="accordion-header" id="userInputAccordion-headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseOne" aria-expanded="true" aria-controls="userInputAccordion-collapseOne">
@@ -82,24 +79,28 @@
               <div id="userInputAccordion-collapseOne" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingOne">
                 <div class="accordion-body">
                     <!-- Text and Results Go Here-->
-                    <!-- Carousel for Results -->
                     <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
                       <!-- Image... currently a stock placeholder image until we find something better -->
                       <div class="col-10 col-sm-8 col-lg-6">
-                          <img id="option1I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
+                          <span class="activityImage"><img id="option1I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
                       </div>
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6 accordianContent">
-                          <h2 class="display-5 fw-bold lh-1 mb-3" id="option1H">So this would be option one:</h2>
-                          <p class="lead" id="option1P1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                          <p class="lead" id="option1P2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
-                          <p class="lead" id="option1P3">Ideally, there would be an accordion here to cycle through other sections like this.</p>
-                          <a id="option1A" href="" target="_blank"></a>
+                          <h2 class="display-5 fw-bold lh-1 mb-3" id="option1H"><span class="activityHeader">So this would be option one:</span></h2>
+                          <!-- Three option1P tags for the moment- we can par them down as needed -->
+                          <p class="lead" id="option1P1"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <p class="lead" id="option1P2"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <p class="lead" id="option1P3"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                       </div>
-                  </section>
+                    </section>                    
+
+                    
+
                 </div>
               </div>
             </section>
+
+            <!-- Dinner -->
             <section class="accordion-item">
               <h2 class="accordion-header" id="userInputAccordion-headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseTwo" aria-expanded="false" aria-controls="userInputAccordion-collapseTwo">
@@ -111,21 +112,23 @@
                     <!-- Text and Results Go Here-->
                     <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
                       <!-- Image... currently a stock placeholder image until we find something better -->
+                      <div class="col-10 col-sm-8 col-lg-6">
+                          <span class="activityImage"><img  id="option2I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
+                      </div>
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6 accordianContent">
-                          <h2 id="option2H" class="display-5 fw-bold lh-1 mb-3">So this would be option two:</h2>
-                          <p id="option2P1" class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                          <p id="option2P2" class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
-                          <p id="option2P3" class="lead">Ideally, there would be an accordion here to cycle through other sections like this.</p>
+                          <h2 class="display-5 fw-bold lh-1 mb-3" id="option2H"><span class="activityHeader">So this would be option two:</span></h2>
+                          <p class="lead" id="option2P1"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <p class="lead" id="option2P2"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <p class="lead" id="option2P3"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                       </div>
-                      <div class="col-10 col-sm-8 col-lg-6">
-                        <img id="option2I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
-                      </div>
-                    </section>
+                    </section>                    
 
                 </div>
               </div>
             </section>
+
+            <!-- Movie -->
             <section class="accordion-item">
               <h2 class="accordion-header" id="userInputAccordion-headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseThree" aria-expanded="false" aria-controls="userInputAccordion-collapseThree">
@@ -138,56 +141,53 @@
                     <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
                       <!-- Image... currently a stock placeholder image until we find something better -->
                       <div class="col-10 col-sm-8 col-lg-6">
-                          <img src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy">
+                          <span class="activityImage"><img  id="option3I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
                       </div>
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6 accordianContent">
-                          <h2 class="display-5 fw-bold lh-1 mb-3">So this would be option three:</h2>
-                          <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat dolorum maiores a ea excepturi ipsa eaque corporis delectus illo.</p>
-                          <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, repellendus.</p>
-                          <p class="lead">Ideally, there would be an accordion here to cycle through other sections like this.</p>
+                          <h2 class="display-5 fw-bold lh-1 mb-3"><span class="activityHeader">So this would be option three:</span></h2>
+                          <p class="lead" id="option3P1"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <p class="lead" id="option3P2"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <p class="lead" id="option3P3"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                       </div>
                     </section>                    
                     
                 </div>
               </div>
             </section>
-        </section>
-        <section class="accordion" id="userInputAccordion">
-          <section class="accordion-item">
-            <h2 class="accordion-header" id="userInputAccordion-headingFour">
-              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseFour" aria-expanded="true" aria-controls="userInputAccordion-collapseFour">
-                Option 4
-              </button>
-            </h2>
-            <div id="userInputAccordion-collapseFour" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingFour">
-              <div class="accordion-body">
-                  <!-- Text and Results Go Here-->
-                  <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
-                    <!-- Image... currently a stock placeholder image until we find something better -->
-                    <div class="col-10 col-sm-8 col-lg-6">
-                        <span class="activityImage"><img id="option4I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
-                    </div>
-                    <!-- This section explains the general premise of the application and how to use it -->
-                    <div class="col-lg-6 accordianContent">
-                        <h2 class="display-5 fw-bold lh-1 mb-3" id="option4H"><span class="activityHeader"></span></h2>
-                        <!-- Three option4P tags for the moment- we can par them down as needed -->
-                        <p class="lead" id="option4P1"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
-                        <p class="lead" id="option4P2"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
-                        <p class="lead" id="option4P3"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
-                    </div>
-                  </section>                    
 
-                  
-
+            <!-- Drinks -->
+            <section class="accordion-item">
+              <h2 class="accordion-header" id="userInputAccordion-headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseFour" aria-expanded="false" aria-controls="userInputAccordion-collapseFour">
+                  Option 4
+                </button>
+              </h2>
+              <div id="userInputAccordion-collapseFour" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingFour">
+                <div class="accordion-body">
+                    <!-- Text and Results Go Here-->
+                    <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
+                      <!-- Image... currently a stock placeholder image until we find something better -->
+                      <div class="col-10 col-sm-8 col-lg-6">
+                          <span class="activityImage"><img  id="option4I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
+                      </div>
+                      <!-- This section explains the general premise of the application and how to use it -->
+                      <div class="col-lg-6 accordianContent">
+                          <h2 class="display-5 fw-bold lh-1 mb-3"><span class="activityHeader">So this would be option four:</span></h2>
+                          <p class="lead" id="option4P1"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <p class="lead" id="option4P2"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <p class="lead" id="option4P3"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                      </div>
+                    </section>                    
+                    
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section class="accordion" id="userInputAccordion">
+            <!-- Event -->
             <section class="accordion-item">
               <h2 class="accordion-header" id="userInputAccordion-headingFive">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseFive" aria-expanded="true" aria-controls="userInputAccordion-collapseFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseFive" aria-expanded="false" aria-controls="userInputAccordion-collapseFive">
                   Option 5
                 </button>
               </h2>
@@ -197,42 +197,35 @@
                     <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
                       <!-- Image... currently a stock placeholder image until we find something better -->
                       <div class="col-10 col-sm-8 col-lg-6">
-                          <span class="activityImage"><img id="option5I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
+                          <span class="activityImage"><img  id="option3I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
                       </div>
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6 accordianContent">
-                          <h2 class="display-5 fw-bold lh-1 mb-3" id="option5H"><span class="activityHeader"></span></h2>
-                          <!-- Three option1P tags for the moment- we can par them down as needed -->
+                          <h2 class="display-5 fw-bold lh-1 mb-3"><span class="activityHeader">So this would be option five:</span></h2>
                           <p class="lead" id="option5P1"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                           <p class="lead" id="option5P2"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                           <p class="lead" id="option5P3"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                       </div>
                     </section>                    
-
                     
-
                 </div>
               </div>
             </section>
+
         <!-- Accordion Ends-->
 
     </main>
         
     <!-- Need a footer Section -->    
-    <footer class="text-left p-4 sticky-bottom" style="background-color:var(--dark);color:var(--lighter)">
-      <a href="">About</a>
+    <footer class="myFooter">
+      <a href="./about.html">About</a>
     </footer>        
 
 
-    
     <!-- jQuery Code -->
-    <script 
-        src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- Moment.js -->
-    <script
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
     ></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
 

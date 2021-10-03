@@ -8,7 +8,9 @@ Using a series of intuitive questions, this app will set out an itinerary for a 
 
 
 ## Screenshots
-*coming soon*
+![Imgur](https://i.imgur.com/xmk4w8L.png)
+![Imgur](https://i.imgur.com/AuH2rsA.png)
+
 
 ## Usage
 *coming soon*
