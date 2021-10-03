@@ -201,25 +201,28 @@ function movieData(){
 	console.log(service)
 	if (movieA[1] == "Mystery/Crime"){
 		var genreCode = '80'
-		movieRequest(service,genreCode)
+		
 	} 
 	if (movieA[1] == "Comedy"){
 		var genreCode = '35'
-		movieRequest(service, genreCode)
+		
 	}
 	if (movieA[1] == "Horror"){
 		console.log('boo')
 		var genreCode = '27'
-		movieRequest(service, genreCode)
+		
 	}
 	if (movieA[1] == "Fantasy"){
 		var genreCode = '14'
-		movieRequest(service, genreCode)
+		
 	}
 	if (movieA[1]=="Drama"){
 		var genreCode = '18'
-		movieRequest(service, genreCode)
+		
 	}
+	localStorage.setItem('service',service)
+	localStorage.setItem('genre',genreCode)
+	movieRequest(service, genreCode)
 }
 
 function foodData(){
@@ -261,6 +264,14 @@ function writeMovie(m){
 	$('#option2P2').empty()
 	$('#option2P3').empty()
 }
+function randMovie(m2){
+	var totalPage = m2.total_pages
+	var finalPage = Math.floor(Math.random()*totalPage)
+	console.log(totalPage)
+	console.log(finalPage)
+	localStorage.setItem("page", finalPage)
+	movie2Requesting()
+}
 
 function foodRequest (tags){
 fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
@@ -275,8 +286,27 @@ fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/rando
 }
 
 function movieRequest (service,genreCode){
-
+	console.log('step 1')
 fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service="+service+"&type=movie&genre="+ genreCode, {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "streaming-availability.p.rapidapi.com",
+		"x-rapidapi-key": "6a33845cedmshfe3c200548f27bfp1afb9ejsne55a61a48c4b"
+	}
+})
+.then(response => response.json())
+.then(data => randMovie(data))
+// 4: musical, 12: Adventure, 14: fantasy, 18: Drama, 27: Horror, 28: Action, 35: Comedy, 80: Crime, 878: Science fiction, 10749: Romance.
+}
+function movie2Requesting (){
+	console.log('step 2')
+var pageNum = localStorage.getItem('page')
+console.log(pageNum)
+var service = localStorage.getItem('service')
+console.log(service)
+var genreCode = localStorage.getItem('genre')
+console.log(genreCode)
+fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&service="+service+"&type=movie&genre="+ genreCode+ "&page="+ pageNum, {
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "streaming-availability.p.rapidapi.com",
@@ -287,4 +317,5 @@ fetch("https://streaming-availability.p.rapidapi.com/search/basic?country=us&ser
 .then(data => writeMovie(data))
 // 4: musical, 12: Adventure, 14: fantasy, 18: Drama, 27: Horror, 28: Action, 35: Comedy, 80: Crime, 878: Science fiction, 10749: Romance.
 }
+
 init()
