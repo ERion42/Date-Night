@@ -126,6 +126,9 @@ var foodB = localStorage.getItem('foodB')
 var eventB = localStorage.getItem('eventB')
 var drinkB = localStorage.getItem('drinkB')
 var randM = Math.floor(Math.random()*7)
+
+
+
 console.log(randM)
 function init(){
 

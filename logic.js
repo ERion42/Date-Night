@@ -152,6 +152,8 @@ movieX = []
 drinkz = []
 eventq = []
 
+console.log(eventq);
+
 function Results(){
     var selections = JSON.parse(localStorage.getItem("finalAnswers"));
     console.log(selections)
