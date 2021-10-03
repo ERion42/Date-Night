@@ -277,23 +277,23 @@ function randMovie(m2){
 	return movie2Requesting()
 }
 
-function foodRequest (tags){
-fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-		"x-rapidapi-key": "0c86673a91msh18102740756c84dp1c7dc9jsn4a761e4a08c1"
-	}
-})
-.then(function(response){
-	if (response.status != 200){
-		return foodError()
-	} else {
-		return response.json()
-	}
-})
-.then(data => writeFood(data));
-}
+// function foodRequest (tags){
+// fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=" + tags + "&number=1", {
+// 	"method": "GET",
+// 	"headers": {
+// 		"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+// 		"x-rapidapi-key": "6a33845cedmshfe3c200548f27bfp1afb9ejsne55a61a48c4b"
+// 	}
+// })
+// .then(function(response){
+// 	if (response.status != 200){
+// 		return foodError()
+// 	} else {
+// 		return response.json()
+// 	}
+// })
+// .then(data => writeFood(data));
+// }
 
 function movieRequest (service,genreCode){
 	console.log('step 1')
