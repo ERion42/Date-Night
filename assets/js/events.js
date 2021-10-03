@@ -5,6 +5,8 @@ console.log(dateDay);
 var dateDayEnd = moment().add(1,"days");
 var dateDay2 = dateDayEnd.format("YYYY-MM-DDTHH:mm:ssZ");
 
+console.log(eventB)
+
 if (eventB=="true"){
 	eventData();
     
@@ -57,29 +59,33 @@ function eventList(data) {
 
         function eventList2(data) {
             console.log(data);
+            var num = Math.floor(Math.random()*data._embedded.events.length);
+            var imageURL = data._embedded.events[num].images[6].url;
+            if ("outlets" in data._embedded.events[num]) {
+                var ticketPurcharURL = data._embedded.events[num].outlets[0].url;
+            } else{
+            var ticketPurcharURL = data._embedded.events[num].url;
+            }
+        $("#option5I").attr("src",imageURL);
+        $('#option5P1').append("There are no "+ eventName + " occuring today. Instead, we have randomly chosen an event for you if you feel spontaneous enough. :)")
+        $('#option5P2').append(data._embedded.events[num].name);
+        $('#ticketPurchase').attr("href", ticketPurcharURL);
         }
-        $("#option5Dropdown").append("Event");
-        $('#option5P1').append("There are no "+ eventName + " occuring today. Please click on the link below to see all occuring events.")
-        $('#option5P1').append(
-        $("#option5P3").toggleClass("hide");
+
     } else {
     var num = Math.floor(Math.random()*data._embedded.events.length);
     console.log(num);
     var dayOfEvent = data._embedded.events[num].dates.start.localDate;
-    // console.log(dayOfEvent);
-    // Date.getDate();
     var timeOfEvent = data._embedded.events[num].dates.start.localTime;
-    // timeOfEvent.getHour();
-    // console.log(dayOfEvent);
-    // console.log(timeOfEvent);
-    // var eventTime = moment(timeOfEvent).format("h:m A");
-    // var eventDate = moment(dayOfEvent).format("MMMM D, YYYY");
-    // }
     var imageURL = data._embedded.events[num].images[6].url;
-    var ticketPurcharURL = data._embedded.events[num].outlets.url;
+    if ("outlets" in data._embedded.events[num]) {
+        var ticketPurcharURL = data._embedded.events[num].outlets[0].url;
+    } else{
+    var ticketPurcharURL = data._embedded.events[num].url;
+    }
     console.log(ticketPurcharURL);
     $("#option5I").attr("src",imageURL);
     $('#option5P1').append(data._embedded.events[num].name);
     $('#option5P2').append("Date and Time: "+dayOfEvent+" at " +timeOfEvent);
     $('#ticketPurchase').attr("href", ticketPurcharURL);
-}
+}}
