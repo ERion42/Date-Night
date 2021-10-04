@@ -16,6 +16,23 @@ main {
   overflow-x: hidden;
 }
 
+/* First big dip in size */
+@media only screen and (max-width:995px) {
+  .landingSection, .resultsSection {
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+  }
+
+  .resultsPic {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .form-label {
+    margin: 0px !important;
+  }
+}
+
 .hide {
   display: none;
 }
@@ -48,10 +65,15 @@ main {
   grid-gap: 5px;
 }
 
+
 /* display:flex by default, display:none after "Begin" button is pushed */
 .landingSection {
   margin-top: 50px;
   display: flex;
+}
+
+.resultsSection {
+  padding-top: 0px !important;
 }
 
 /* display:none by default, display:flex after "Begin" button is pushed, display:none after "Continue" button is pushed */
@@ -90,23 +112,23 @@ main {
   background: var(--dark) !important;
 }
 
+.myFooter {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: var(--dark);
+  color: var(--lighter);
+  text-align: center;
+  padding: 20px;
+}
+
+.myFooter a {
+  color: var(--lighter);
+}
+
+
 /* Display:none by default, but under right circumstances display: '' */
 #addressSection {
   display: '';
 }
-
-.myFooter {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--dark);
-    color: var(--lighter);
-    text-align: center;
-    padding: 20px;
-}
-
-.myFooter a {
-    color: var(--lighter);
-}
-
 
