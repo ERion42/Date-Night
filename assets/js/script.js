@@ -74,39 +74,26 @@ var searchMultiple = function(){
 				}
             }
             if(searchActive === 'true'){
-                if((goingA[1] === 'Indoor') && (timeOfDay === 'Day')){
+                if((goingA[0] === 'Indoor') && (timeOfDay === 'Day')){
 					dateOptions.push('museum');
 					dateOptions.push('aquarium');
 					dateOptions.push('bowling_alley');
-				}else if((goingA[1] === 'Outdoor') && (timeOfDay === 'Night')){
+					console.log(dateOptions);
+				}else if((goingA[0] === 'Outdoor') && (timeOfDay === 'Day')){
 					dateOptions.push('park');
-                	dateOptions.push('zoo');                
+                	dateOptions.push('zoo');    
+					console.log(dateOptions);      
+					     
                 	// dateOptions.push('tourist_attraction');
-				}else if((goingA[1] === 'Indoor') && (timeOfDay === 'Night')){
+				}else if((goingA[0] === 'Indoor') && (timeOfDay === 'Night')){
 					dateOptions.push('bowling_alley');
 				}else{
 					console.log("Sorry, we can't find any outside nighttime activities.")
-				}    
+
+				} 
+					console.log(goingA);    
             }
-			/*
-			Changes to the questions:
-			
-			Change time of day to either day or night needs to be one or the other. This will help reduce the number of fetches. E.g. cafe for day, restaurant for night. Also, if night is chosen it will necessarily cut almost all of the activities out. Museums, aquariums, and zoos are not open at night. At the moment the only realistic night activity I can get is bowling alleys.
-			
-			Remove type of drink question and change "What's your scene" to only include bar or night club. If possible only show if "get drinks" is selected.
-			
-			Remove "No Preference" option on Indoor/Outdoor question. This question pares down the biggest set of fetches, with no preference it will make too many fetches all at once.
-
-			The "What's your budget" question is proving difficult to use. I'm getting price data but selecting output based on that data is difficult.
-
-			I have no way to use the "What do you want your activity to be?" question. I don't know if anyone else does.  
-
-			The "What's your favorite out of the following:" probably needs to be removed for now. I don't have any way to use it.
-
-			The "How many people are you comfortable being around in public?" question probably needs to be removed as well.
-
-			If possible only show food and movie questions if stay indoors is selected.
-			 */
+	
         console.log(dateOptions);
     
     	//pulls user location info from localStorage to put into the search URL 
@@ -119,6 +106,13 @@ var searchMultiple = function(){
 		for (i=0; i<dateOptions.length; i++){
 			parseMapsData(dateOptions[i]);
 		}
+		makeActivityArray(dateOptions);
+		foodArray(dateOptions);
+		drinkArray(dateOptions);
+		displayActivity();
+		displayFood();
+		displayDrink();
+		displayTheater();
 	}
 }
 
@@ -151,58 +145,212 @@ function recrsiveFetch(dateOptions,i, latlng){
 var previousIndex = 0;
 var index = 0;
 function parseMapsData(keyname){
-	// if (localStorage.getItem(keyname)){
-
-		var arr = [];
-
-				for (var i=0; i <3; i++){
-					var queryData = JSON.parse(localStorage.getItem(keyname));
-					previousIndex = index;
-					index = Math.floor(Math.random() * queryData.results.length);
-
-					//checks if the query has zero results and removes the local storage key if true. This is to prevent a stack overflow. It then recursively calls the function.
-					if(queryData.status === 'ZERO_RESULTS'){
-						console.log("Sorry, we didn't find any results for " + keyname);
-						localStorage.removeItem(keyname);
-						console.log(queryData);
-						return parseMapsData(keyname);
-					
-					}else if(previousIndex === index){
-				 		return parseMapsData(keyname);
-
-					//The following elseif statement checks to see if the next result is undefined (in case fewer than 3 but more than 0 results were found). If so, it sets i equal to 3 which should trigger the call for the recursive function with the next keyname. This allows for existing results to be added to local storage without repeats.
-					}else if(queryData.results[i] === undefined){
-						console.log("The search for " + keyname + " returned limited results.")
-						i=3;		
-					}else{
-
-
-						arr.push(queryData.results[index])
-						var option = JSON.stringify(arr[i]);
-						localStorage.setItem(keyname + i, option);
-
-					}
-			
-		}	
-		// }
-
-	}
-
-
-function displayMapsData(dateOptions, keyname){
 	var arr = [];
-	for(var i = 0; i < 3; i){
-		var queryData = JSON.parse(localStorage.getItem(keyname+i));
-		var name = queryData.name;
-		var address = queryData.formatted_address;
-		rating = queryData.rating;
-		if(queryData.price_level !== null){
-			priceLevel = queryData.price_level;
+
+	for (var i=0; i <3; i++){
+		var queryData = JSON.parse(localStorage.getItem(keyname));
+		previousIndex = index;
+		index = Math.floor(Math.random() * queryData.results.length);
+
+		//checks if the query has zero results and removes the local storage key if true. This is to prevent a stack overflow. It then recursively calls the function.
+		if(queryData.status === 'ZERO_RESULTS'){
+			console.log("Sorry, we didn't find any results for " + keyname);
+			localStorage.removeItem(keyname);
+			console.log(queryData);
+			return parseMapsData(keyname);
+					
+		}else if(previousIndex === index){
+			console.log(index);
+			console.log(previousIndex);
+			return parseMapsData(keyname);
+
+			//The following elseif statement checks to see if the next result is undefined (in case fewer than 3 but more than 0 results were found). If so, it sets i equal to 3 which should trigger the call for the recursive function with the next keyname. This allows for existing results to be added to local storage without repeats.
+		}else if(queryData.results[i] === undefined){
+			console.log("The search for " + keyname + " returned limited results.")
+			i=3;		
+		}else{
+			arr.push(queryData.results[index])
+			var option = JSON.stringify(arr[i]);
+			localStorage.setItem(keyname + i, option);
 		}
-		dateOptions[i]
-		arr.push(localStorage.getItem(keyname+i))	
+			
+	}	
+}
+
+
+// function displayMapsData(dateOptions, keyname){
+// 	var arr = [];
+
+// 		var queryData = JSON.parse(localStorage.getItem(keyname+1));
+// 		var name = queryData.name;
+// 		var address = queryData.formatted_address;
+// 		rating = queryData.rating;
+// 		if(queryData.price_level !== null){
+// 			priceLevel = queryData.price_level;
+// 		}
+// 		$('.activity').text(name);
+// 		$(activityAddress).text(address)
+// 		dateOptions[i]
+// 		arr.push(localStorage.getItem(keyname+i))	
+// 	}
+
+function makeActivityArray(dateOptions){
+	var activityArray = [];
+	for (var i =0; i < dateOptions.length; i++){
+		if(dateOptions[i] === 'zoo'){
+			activityArray.push('zoo');
+		}
+		if(dateOptions[i] === 'park'){
+			activityArray.push('park');
+		}
+		if(dateOptions[i] === 'bowling_alley'){
+			activityArray.push('bowling_alley');
+		}
+		if(dateOptions[i] === 'aquarium'){
+			activityArray.push('aquarium');
+		}
+		if(dateOptions[i] === 'museum'){
+			activityArray.push('museum');
+		}
+		localStorage.setItem('activityArray', activityArray);
 	}
+	if(activityArray.length === 0){
+		console.log('There are no available activities');
+		return;
+	}
+	console.log(activityArray);
+}
+function foodArray(dateOptions){
+	var foodArray = [];
+	for (var i =0; i < dateOptions.length; i++){
+		if(dateOptions[i] === 'restaurant'){
+			foodArray.push('restaurant');
+		}
+		if(dateOptions[i] === 'cafe'){
+			foodArray.push('cafe');
+		}
+	}
+	localStorage.setItem('foodArray', foodArray);
+
+	if(foodArray.length === 0){
+		console.log('There are no available activities');
+		return;
+	}
+}
+
+function drinkArray(dateOptions){
+	var drinkArray = [];
+	for (var i =0; i < dateOptions.length; i++){
+		if(dateOptions[i] === 'bar'){
+			drinkArray.push('bar');
+		}
+		if(dateOptions[i] === 'night_club'){
+			drinkArray.push('night_club');
+		}
+	}
+	localStorage.setItem('drinkArray', drinkArray);
+
+	if(drinkArray.length === 0){
+		console.log('There are no available activities');
+		return;
+	}
+}
+
+
+
+function displayActivity(){
+	var index = 0;
+	var activityString = localStorage.getItem('activityArray');
+	var activityArray = activityString.split(',');
+	console.log(activityArray);
+
+	index = Math.floor(Math.random() * activityArray.length);
+	console.log(index);
+	var randomOption = activityArray[index];
+	console.log(randomOption);
+	var getActivity = localStorage.getItem(randomOption+'0');
+	console.log(getActivity);
+	var yourActivity = JSON.parse(getActivity);
+	// console.log(yourActivity);
+	$('#option1H').text(yourActivity.name);
+	console.log(yourActivity.vicinity);
+	if(yourActivity.formatted_address !== undefined){
+		$('#option1P1').text('Address: ' + yourActivity.formatted_address);
+	}else{
+		$('#option1P1').text('Address: ' + yourActivity.vicinity);
+		// console.log('Address: ' + yourActivity.vicinity);
+	}
+	if(yourActivity.price_level !== undefined){
+		$('#option1P2').text(yourActivity.price_level);
+	}else{
+		$('#option1P2').text('Rating: ' +  yourActivity.rating);
+	}
+	$('#option1P3').text(' ');
+} 
+
+function displayFood(){
 	
+	var index = 0;
+	var foodString = localStorage.getItem('activityArray');
+	var foodArray = foodString.split(',');
+	index = Math.floor(Math.random() * foodArray.length);
+	console.log(index);
+	var randomOption = foodArray[index];
+	var getFood = localStorage.getItem(randomOption+'0');
+	var yourFood= JSON.parse(getFood);
+	$('#option2H').text(yourFood.name);
+	if(yourFood.formatted_address !== undefined){
+		$('#option2P1').text('Address: ' + yourFood.formatted_address);
+	}else{
+		$('#option2P1').text('Address: ' + yourFood.vicinity);
+	}
+	if(yourFood.price_level !== undefined){
+		$('#option2P2').text(yourFood.price_level);
+	}else{
+		$('#option2P2').text('Rating: ' +  yourFood.rating);
+	}
+	$('#option2P3').text(' ');
+} 
+
+function displayDrink(){
+	
+	var index = 0;
+	var drinkString = localStorage.getItem('drinkArray');
+	var drinkArray = drinkString.split(',');
+	index = Math.floor(Math.random() * drinkArray.length);
+	var randomOption = drinkArray[index];
+	var getDrink = localStorage.getItem(randomOption+'0');
+	var yourDrink= JSON.parse(getDrink);
+	$('#option4H').text(yourDrink.name);
+	if(yourDrink.formatted_address !== undefined){
+		$('#option4P1').text('Address: ' + yourDrink.formatted_address);
+	}else{
+		$('#option4P1').text('Address: ' + yourDrink.vicinity);
+	}
+	if(yourDrink.price_level !== undefined){
+		$('#option4P2').text(yourDrink.price_level);
+	}else{
+		$('#option4P2').text('Rating: ' +  yourDrink.rating);
+	}
+	$('#option4P3').text(' ');
+} 
+
+function displayTheater(){
+
+	var getTheater = localStorage.getItem('movie_theater'+'0');
+	var randomTheater = JSON.parse(getTheater);
+	$('#option3H').text(randomTheater.name);
+	if(randomTheater.formatted_address !== undefined){
+		$('#option3P1').text('Address: ' + randomTheater.formatted_address);
+	}else{
+		$('#option3P1').text('Address: ' + randomTheater.vicinity);
+	}
+	if(randomTheater.price_level !== undefined){
+		$('#option3P2').text(randomTheater.price_level);
+	}else{
+		$('#option3P2').text('Rating: ' +  randomTheater.rating);
+	}
+	$('#option3P3').text(' ');
 }
 
 console.log(randM)
