@@ -277,7 +277,7 @@ console.log(goingA);
 function drinkPlace(){
 	var randDrink = Math.floor(Math.random()*4)
 	$('#option4H').text(drinkPlacehold[randDrink].name)
-	$('#option4A').text(drinkPlacehold[randDrink].link)
+	$('#option4A').text(drinkPlacehold[randDrink].link).attr('href', drinkPlacehold[randDrink].link)
 	$('#option4P1').text(drinkPlacehold[randDrink].small)
 	$('#option4P2').empty()
 	$('#option4P3').empty()
