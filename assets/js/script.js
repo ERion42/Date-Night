@@ -318,7 +318,7 @@ function displayActivity(){
 function displayFood(){
 	
 	var index = 0;
-	var foodString = localStorage.getItem('activityArray');
+	var foodString = localStorage.getItem('foodArray');
 	var foodArray = foodString.split(',');
 	index = Math.floor(Math.random() * foodArray.length);
 	console.log(index);
