@@ -232,10 +232,6 @@ function displayMapsData(dateOptions, keyname){
 	
 }
 
-if (eventB == "true"){	
-	$('.locationSearch').toggleClass('hide')
-}
-
 console.log(randM)
 function init(){
 

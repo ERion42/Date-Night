@@ -41,7 +41,7 @@
         <!-- Location Search -->
         <form class="locationSearch hide">
           <div class="mb-3 text-center">
-            <label for="address" class="form-label" style="margin-top: 50px;" id="zipCode"><h2 id="zipCodeEntry">Enter the zip code in which your date will take place:</h2></label>
+            <label for="address" class="form-label" style="margin-top: 50px;" id="zipCode"><h2>Enter the zip code in which your date will take place:</h2></label>
             <p class="lead">Please and thank you.</p>
             <input type="address" class="form-control w-75" id="address" style="margin-left: 12.5%; margin-right: 12.5%;">
             <button type="submit" class="btn btn-primary" style="margin: 15px 0 15px 0;">Submit</button>
@@ -68,12 +68,12 @@
         </section>
 
         <!-- Accordion Begins -->
-        <section class="accordion" id="userInputAccordion">
+        <section class="accordion accordian1" id="userInputAccordion">
           <!-- Activity -->
-            <section class="accordion-item">
+            <section class="accordion-item accordion1">
               <h2 class="accordion-header" id="userInputAccordion-headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseOne" aria-expanded="true" aria-controls="userInputAccordion-collapseOne">
-                  Option 1
+                  Activity
                 </button>
               </h2>
               <div id="userInputAccordion-collapseOne" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingOne">
@@ -82,15 +82,15 @@
                     <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
                       <!-- Image... currently a stock placeholder image until we find something better -->
                       <div class="col-10 col-sm-8 col-lg-6">
-                          <span class="activityImage"><img id="option1I" src="" width=100% height=auto loading="lazy"></span>
+                          <span class="activityImage"><img id="option1I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
                       </div>
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6 accordianContent">
-                          <h2 class="display-5 fw-bold lh-1 mb-3" id="option1H"><span class="activityHeader"></span></h2>
+                          <h2 class="display-5 fw-bold lh-1 mb-3" id="option1H"><span class="activityHeader">So this would be option one:</span></h2>
                           <!-- Three option1P tags for the moment- we can par them down as needed -->
-                          <p class="lead" id="option1P1"><span class="activityDetails"></span></p>
-                          <p class="lead" id="option1P2"><span class="activityDetails"></span></p>
-                          <p class="lead" id="option1P3"><span class="activityDetails"></span></p>
+                          <p class="lead" id="option1P1"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <p class="lead" id="option1P2"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <p class="lead" id="option1P3"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                       </div>
                     </section>                    
 
@@ -101,10 +101,10 @@
             </section>
 
             <!-- Dinner -->
-            <section class="accordion-item">
+            <section class="accordion-item accordion2">
               <h2 class="accordion-header" id="userInputAccordion-headingTwo">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseTwo" aria-expanded="false" aria-controls="userInputAccordion-collapseTwo">
-                  Option 2
+                  Food
                 </button>
               </h2>
               <div id="userInputAccordion-collapseTwo" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingTwo">
@@ -121,6 +121,7 @@
                           <p class="lead" id="option2P1"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                           <p class="lead" id="option2P2"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                           <p class="lead" id="option2P3"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <a href="" id="option2A" target="_blank"></a>
                       </div>
                     </section>                    
 
@@ -129,10 +130,10 @@
             </section>
 
             <!-- Movie -->
-            <section class="accordion-item">
+            <section class="accordion-item accordion3">
               <h2 class="accordion-header" id="userInputAccordion-headingThree">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseThree" aria-expanded="false" aria-controls="userInputAccordion-collapseThree">
-                  Option 3
+                  Movie
                 </button>
               </h2>
               <div id="userInputAccordion-collapseThree" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingThree">
@@ -145,7 +146,7 @@
                       </div>
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6 accordianContent">
-                          <h2 class="display-5 fw-bold lh-1 mb-3" id="option3H"><span class="activityHeader">So this would be option three:</span></h2>
+                          <h2 class="display-5 fw-bold lh-1 mb-3" id="option3H"><span class="activityHeader" id="option3H">So this would be option three:</span></h2>
                           <p class="lead" id="option3P1"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                           <p class="lead" id="option3P2"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
                           <p class="lead" id="option3P3"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
@@ -157,10 +158,10 @@
             </section>
 
             <!-- Drinks -->
-            <section class="accordion-item">
+            <section class="accordion-item accordion4">
               <h2 class="accordion-header" id="userInputAccordion-headingFour">
                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseFour" aria-expanded="false" aria-controls="userInputAccordion-collapseFour">
-                  Option 4
+                  Drinks
                 </button>
               </h2>
               <div id="userInputAccordion-collapseFour" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingFour">
@@ -186,10 +187,10 @@
             </section>
 
             <!-- Event -->
-            <section class="accordion-item">
+            <section class="accordion-item accordion5">
               <h2 class="accordion-header" id="userInputAccordion-headingFive">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseFive" aria-expanded="false" aria-controls="userInputAccordion-collapseFive">
-                  Option 5
+                <button class="accordion-button collapsed" id = "option5Dropdown" type="button" data-bs-toggle="collapse" data-bs-target="#userInputAccordion-collapseFive" aria-expanded="false" aria-controls="userInputAccordion-collapseFive">
+                  Event
                 </button>
               </h2>
               <div id="userInputAccordion-collapseFive" class="accordion-collapse collapse" aria-labelledby="userInputAccordion-headingFive">
@@ -198,14 +199,14 @@
                     <section class="firstPage row flex-lg-row-reverse align-items-center g-5 py-5 landingSection hide" style="margin-top: 0px; padding-top: 0px;">
                       <!-- Image... currently a stock placeholder image until we find something better -->
                       <div class="col-10 col-sm-8 col-lg-6">
-                          <span class="activityImage"><img  id="option3I" src="./assets/img/man_and_woman_standing_on_dock_during_sunset-scopio-147c3f45-b2a4-4ec6-a8ac-38c6ccda4a0a.jpg" class="d-block img-fluid mainPic" alt="Photo by  Pablo Nidam  on  Scopio" width=100% height=auto loading="lazy"></span>
+                          <span class="activityImage"><img  id="option5I" src="" width=100% height=auto loading="lazy"></span>
                       </div>
                       <!-- This section explains the general premise of the application and how to use it -->
                       <div class="col-lg-6 accordianContent">
-                          <h2 class="display-5 fw-bold lh-1 mb-3"><span class="activityHeader">So this would be option five:</span></h2>
-                          <p class="lead" id="option5P1"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
-                          <p class="lead" id="option5P2"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
-                          <p class="lead" id="option5P3"><span class="activityDetails">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span></p>
+                          <h2 class="display-5 fw-bold lh-1 mb-3"><span class="activityHeader"></span></h2>
+                          <p class="lead" id="option5P1"><span class="activityDetails"></span></p>
+                          <p class="lead" id="option5P2"><span class="activityDetails"></span></p>
+                          <p class="lead" id="option5P3"><span class="activityDetails"><a id="ticketPurchase" href="">Purchase Tickets Here</a></span></p>
                       </div>
                     </section>                    
                     
@@ -213,8 +214,6 @@
               </div>
             </section>
 
-
-        </section>
         <!-- Accordion Ends-->
 
     </main>
@@ -231,15 +230,13 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
     ></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     <!-- Generalized, page-specific javaScript -->
     
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./questions.js"></script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8ckXor6hYs94Ot5UefJcP4kyMtrf-578&callback=initMap%22%3E"></script>
-
-    
+    <script src="assets/js/events.js"></script>
 
 </body>
 </html>
