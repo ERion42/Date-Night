@@ -308,7 +308,7 @@ function displayActivity(){
 		// console.log('Address: ' + yourActivity.vicinity);
 	}
 	if(yourActivity.price_level !== undefined){
-		$('#option1P2').text(yourActivity.price_level);
+		$('#option1P2').text('Price Level: ' + yourActivity.price_level);
 	}else{
 		$('#option1P2').text('Rating: ' +  yourActivity.rating);
 	}
@@ -332,7 +332,7 @@ function displayFood(){
 		$('#option2P1').text('Address: ' + yourFood.vicinity);
 	}
 	if(yourFood.price_level !== undefined){
-		$('#option2P2').text(yourFood.price_level);
+		$('#option2P2').text('Price Level: ' + yourFood.price_level);
 	}else{
 		$('#option2P2').text('Rating: ' +  yourFood.rating);
 	}
@@ -355,7 +355,7 @@ function displayDrink(){
 		$('#option4P1').text('Address: ' + yourDrink.vicinity);
 	}
 	if(yourDrink.price_level !== undefined){
-		$('#option4P2').text(yourDrink.price_level);
+		$('#option4P2').text('Price Level: ' + yourDrink.price_level);
 	}else{
 		$('#option4P2').text('Rating: ' +  yourDrink.rating);
 	}
