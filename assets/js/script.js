@@ -13,6 +13,33 @@ var movieB = localStorage.getItem('movieB')
 var foodB = localStorage.getItem('foodB')
 var eventB = localStorage.getItem('eventB')
 var drinkB = localStorage.getItem('drinkB')
+var drinkPlacehold = [
+	{
+		name: 'Old Fashioned',
+		small: 'The old fashioned is a cocktail made by muddling sugar with bitters and water, adding whiskey or, less commonly, brandy, and garnishing with orange slice or zest and a cocktail cherry. It is traditionally served in an old fashioned glass (also known as rocks glass), which predated the cocktail.',
+		link: 'https://www.liquor.com/recipes/bourbon-old-fashioned/'
+	},
+	{
+		name: 'Margarita',
+		small: 'A margarita is a cocktail consisting of tequila, orange liqueur, and lime juice often served with salt on the rim of the glass. The drink is served shaken with ice (on the rocks), blended with ice (frozen margarita), or without ice (straight up)',
+		link: 'https://www.liquor.com/recipes/margarita/'
+	},
+	{
+		name: 'Cosmopolitan',
+		small: 'A cosmopolitan, or informally a cosmo, is a cocktail made with vodka, triple sec, cranberry juice, and freshly squeezed or sweetened lime juice.',
+		link: 'https://www.acouplecooks.com/cosmopolitan-cocktail/'
+	},
+	{
+		name: 'Negroni',
+		small: "A negroni is a bitter cocktail but the vermouth and orange garnish add enough fruity sweetness to balance it out. The taste is herby, a bit rooty - think liquorice root - and then there are some deep dark fruit flavours. The gin is present too so there's that classic juniper tang, notes of lemon and coriander seed.",
+		link: 'https://www.liquor.com/recipes/negroni/'
+	},
+	{
+		name: 'Moscow Mule',
+		small: 'A Moscow mule is a cocktail made with vodka, spicy ginger beer, and lime juice, garnished with a slice or wedge of lime. It is a type of buck; therefore, sometimes called a vodka buck.',
+		link: 'https://www.allrecipes.com/recipe/221310/moscow-mule-cocktail/'
+	}
+]
 var randM = Math.floor(Math.random()*7)
 var timeOfDay = localStorage.getItem('timeOfDay');
 console.log(drinkA);
@@ -223,7 +250,7 @@ function init(){
 		} else {
 			console.log('try harder')
 		}
-		
+		drinkPlace();
 	} else if (goingB == "true"){
 		
 		$('.locationSearch').toggleClass('hide')
@@ -251,7 +278,14 @@ if(eventB == 'false'){
 console.log(goingA);
 
 
-
+function drinkPlace(){
+	var randDrink = Math.floor(Math.random()*4)
+	$('#option4H').text(drinkPlacehold[randDrink].name)
+	$('#option4A').text(drinkPlacehold[randDrink].link)
+	$('#option4P1').text(drinkPlacehold[randDrink].small)
+	$('#option4P2').empty()
+	$('#option4P3').empty()
+}
 
 
 
