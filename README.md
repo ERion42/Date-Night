@@ -19,4 +19,7 @@ The following is a link to the website.  Your personalized date begins now.  <a 
 We are still building this application. There is no functionality yet.
 
 ## Future Development Plans
-*added as we go*
+  
+- Refactor with React
+- Create User Login*
+- Fix Datepicker
